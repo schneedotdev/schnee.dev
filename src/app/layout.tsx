@@ -21,10 +21,6 @@ export default function RootLayout({
             <Header />
             <div className="mt-28 w-full lg:mt-36"></div>
             {children}
-            <div className="mb-10 mt-20 h-1 w-full text-xs">
-              <span className="border-b-[1px] border-dotted">CC BY-NC 4.0</span>{" "}
-              2023 &copy; Brian Schnee.
-            </div>
             <Footer />
           </div>
         </div>
