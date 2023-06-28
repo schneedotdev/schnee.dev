@@ -12,12 +12,12 @@ body {
   background: var(--background);
 }
 
-.p-outside {
+.outside-padding {
   position: relative;
   transition: background-color 0.3s;
 }
 
-.p-outside::before {
+.outside-padding::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -31,11 +31,11 @@ body {
   pointer-events: none;
 }
 
-.p-outside:hover {
+.outside-padding:hover {
   color: var(--primary-color);
 }
 
-.p-outside::after {
+.outside-padding::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -48,7 +48,28 @@ body {
   transition: opacity 0.3s;
 }
 
-.p-outside.active::after,
-.p-outside:hover::before {
+.outside-padding.active::after,
+.outside-padding:hover::before {
   opacity: 1;
+}
+
+.outside-padding-cover {
+  position: relative;
+}
+
+.outside-padding-cover::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -10px;
+  right: -10px;
+  bottom: 0%;
+}
+
+.opaque::before {
+  background: #18181af5;
+}
+
+.gradient::before {
+  background: linear-gradient(#18181a, transparent);
 }

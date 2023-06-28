@@ -4,9 +4,9 @@ const Header = () => {
   return (
     <>
       <div className="mt-28 w-full lg:mt-36"></div>
-      <nav className="fixed z-10 w-full max-w-2xl">
-        <ul className="pointer-events-auto flex w-full gap-8 bg-[#18181aF5] pb-1 pt-12 lg:pt-20">
-          <li className="p-outside active group hover:cursor-pointer">
+      <nav className="fixed z-10 w-full max-w-xl">
+        <ul className="outside-padding-cover opaque pointer-events-auto flex w-full gap-8 pb-1 pt-12 lg:pt-20">
+          <li className="outside-padding active group hover:cursor-pointer">
             <Link href="/" title="home">
               <svg
                 className="group-hover:stroke-emerald-500"
@@ -25,7 +25,7 @@ const Header = () => {
               </svg>
             </Link>
           </li>
-          <li className="p-outside group hover:cursor-pointer">
+          <li className="outside-padding group hover:cursor-pointer">
             <Link href="/blogs" title="blogs">
               <svg
                 className="group-hover:stroke-emerald-500"
@@ -47,7 +47,7 @@ const Header = () => {
               </svg>
             </Link>
           </li>
-          <li className="p-outside group hover:cursor-pointer">
+          <li className="outside-padding group hover:cursor-pointer">
             <Link href="/projects" title="projects">
               <svg
                 className="group-hover:stroke-emerald-500"
@@ -67,8 +67,8 @@ const Header = () => {
               </svg>
             </Link>
           </li>
-          <li className="h-4 w-[1px] bg-tertiary-color"></li>
-          <li className="p-outside group hover:cursor-pointer">
+          <li className="z-10 h-4 w-[1px] bg-tertiary-color"></li>
+          <li className="outside-padding group hover:cursor-pointer">
             <a
               href="https://www.github.com/brianschnee"
               target="_blank"
@@ -91,7 +91,7 @@ const Header = () => {
               </svg>
             </a>
           </li>
-          <li className="p-outside group hover:cursor-pointer">
+          <li className="outside-padding group hover:cursor-pointer">
             <a
               href="https://www.linkedin.com/in/brian-schnee-dev"
               target="_blank"
@@ -115,7 +115,7 @@ const Header = () => {
               </svg>
             </a>
           </li>
-          <li className="p-outside group hover:cursor-pointer">
+          <li className="outside-padding group hover:cursor-pointer">
             <a
               href="https://www.twitter.com/fullstackbrian"
               target="_blank"
@@ -138,7 +138,7 @@ const Header = () => {
             </a>
           </li>
         </ul>
-        <div className="h-10 w-full bg-gradient-to-b from-[#18181aF5]"></div>
+        <div className="outside-padding-cover gradient z-[-1] h-10 w-full"></div>
       </nav>
     </>
   );

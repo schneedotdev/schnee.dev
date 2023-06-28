@@ -8,7 +8,7 @@ type ProjectProps = {
 const Project = ({ link, title, tech, year }: ProjectProps) => {
   return (
     <a
-      className="p-outside group flex h-full flex-col justify-between gap-3"
+      className="outside-padding group flex h-full flex-col justify-between gap-3"
       href={link}
     >
       <div className="flex items-center gap-2">

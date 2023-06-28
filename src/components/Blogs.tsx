@@ -6,7 +6,7 @@ type BlogProps = {
 const Blog = ({ title, date }: BlogProps) => {
   return (
     <a
-      className="p-outside group flex h-full flex-col justify-between gap-3"
+      className="outside-padding group flex h-full flex-col justify-between gap-3"
       href="https://dev.to/brianschnee/how-to-learn-and-use-typescript-a-comprehensive-beginners-guide-5l"
     >
       <h3
