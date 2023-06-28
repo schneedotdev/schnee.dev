@@ -9,9 +9,9 @@
   /* --secondary: #a0a0a0; */
   --tertiary: hsl(240, 4%, 35%);
   /* --tertiary: #505050; */
-  --background: hsl(240, 4%, 9%);
+  --background: hsl(240, 4%, 10%);
+  --background-opaque: hsl(240, 4%, 10%, 97%);
   /* --background: #18181a; */
-  --background-opaque: hsl(240, 4%, 9.5%, 97%);
   --accent: #10b981;
 }
 
@@ -78,5 +78,5 @@ body {
 }
 
 .gradient::before {
-  background: linear-gradient(var(--background), transparent);
+  background: linear-gradient(var(--background-opaque), transparent);
 }
