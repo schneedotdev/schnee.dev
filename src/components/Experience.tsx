@@ -36,7 +36,7 @@ const Experience = ({ startDate }: ExperienceProps) => {
 	}, [startDate]);
 
 	return (
-		<h3 className='text-[#606060]'>
+		<h3 className='text-tertiary-color'>
 			{`Programming for ${time.years} years, ${time.months} months, ${time.days} days, ${time.hours} hours, ${time.minutes} minutes, 
          ${time.seconds} seconds`}
 		</h3>
