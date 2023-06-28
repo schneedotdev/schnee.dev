@@ -9,8 +9,9 @@
   /* --secondary: #a0a0a0; */
   --tertiary: hsl(240, 4%, 35%);
   /* --tertiary: #505050; */
-  --background: hsl(240, 4%, 10%);
+  --background: hsl(240, 4%, 9%);
   /* --background: #18181a; */
+  --background-opaque: hsl(240, 4%, 9.5%, 97%);
   --accent: #10b981;
 }
 
@@ -33,13 +34,12 @@ body {
   background-color: #f2f2f308;
   border-radius: 0.375rem;
   opacity: 0;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   pointer-events: none;
 }
 
 .outside-padding:hover {
   color: var(--primary);
-  
 }
 
 .outside-padding::after {
@@ -74,7 +74,7 @@ body {
 }
 
 .opaque::before {
-  background: hsl(240, 4%, 10%, 97%);
+  background: var(--background-opaque);
 }
 
 .gradient::before {
