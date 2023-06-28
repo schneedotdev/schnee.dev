@@ -10,7 +10,7 @@
   --tertiary: hsl(240, 4%, 35%);
   /* --tertiary: #505050; */
   --background: hsl(240, 4%, 10%);
-  --background-opaque: hsl(240, 4%, 10%, 97%);
+  --background-opaque: hsl(240, 4%, 10%, 96%);
   /* --background: #18181a; */
   --accent: #10b981;
 }
