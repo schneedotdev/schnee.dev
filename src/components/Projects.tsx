@@ -32,14 +32,14 @@ const Project = ({ link, title, tech, year }: ProjectProps) => {
 
 const Projects = () => {
   return (
-    <div className="mt-20 w-full">
+    <div className="mt-20">
       <h2 className="text-primary-color">Projects</h2>
 
-      <div className="mt-10 grid grid-cols-1 gap-7">
+      <div className="mt-10 flex flex-col gap-7">
         <Project
           title="Climbers Connect"
           link="https://github.com/brianschnee/climbers-connect"
-          year={"'23"}
+          year="'23"
           tech={[
             "typescript",
             "node",
@@ -55,13 +55,26 @@ const Projects = () => {
         <Project
           title="Attri Enterprises"
           link="https://github.com/brianschnee/attrienterprises-optimized"
-          year={"'23"}
+          year="'23"
           tech={["typescript", "preact", "astrobuild", "css", "vercel"]}
+        />
+        <Project
+          title="changelog"
+          link="https://github.com/brianschnee/changelog"
+          year="'22"
+          tech={[
+            "typescript",
+            "node",
+            "express",
+            "prisma",
+            "postgresql",
+            "jwt",
+          ]}
         />
         <Project
           title="Timeato"
           link="https://github.com/devv-work/timeato"
-          year={"'22"}
+          year="'22"
           tech={[
             "javascript",
             "node",
@@ -75,8 +88,8 @@ const Projects = () => {
         />
         <Project
           title="Find a dev"
-          link={"https://github.com/brianschnee/findadev"}
-          year={"'22"}
+          link="https://github.com/brianschnee/findadev"
+          year="'22"
           tech={[
             "javascript",
             "node",
