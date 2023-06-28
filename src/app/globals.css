@@ -5,11 +5,11 @@
 :root {
   --tailwind-emerald: #10b981;
   --primary-color: #e2e2e2;
-  --primary-dark: #18181a;
+  --background: #18181a;
 }
 
 body {
-  background: var(--primary-dark);
+  background: var(--background);
 }
 
 .p-outside {
