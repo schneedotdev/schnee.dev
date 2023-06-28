@@ -8,9 +8,9 @@ export default function BlogsPage() {
         Blogs <span className="ml-1 text-lg">✍️</span>
       </h1>
       <p className="mt-8 text-secondary">
-        More than learning, I am energized by sharing my knowledge and
+        Along with learning, I am energized by sharing my knowledge and
         experiences with others. I hope you take the time to explore my blog
-        posts.
+        articles.
       </p>
       <Blogs />
     </>
