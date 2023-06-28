@@ -10,14 +10,12 @@ const Blog = ({ title, date }: BlogProps) => {
       href="https://dev.to/brianschnee/how-to-learn-and-use-typescript-a-comprehensive-beginners-guide-5l"
     >
       <h3
-        className="group-hover:underline group-hover:decoration-emerald-500
+        className="group-hover:decoration-accent group-hover:underline
       group-hover:underline-offset-4"
       >
         {title}
       </h3>
-      <time className="text-tertiary-color group-hover:text-secondary-color">
-        {date}
-      </time>
+      <time className="text-tertiary group-hover:text-secondary">{date}</time>
     </a>
   );
 };
@@ -25,7 +23,7 @@ const Blog = ({ title, date }: BlogProps) => {
 const Blogs = () => {
   return (
     <div className="mt-20 w-full">
-      <h2 className="text-primary-color">Blogs</h2>
+      <h2 className="text-primary">Blogs</h2>
 
       <div className="mt-10 grid grid-cols-1 gap-7 sm:grid-cols-3 sm:grid-rows-1">
         <Blog

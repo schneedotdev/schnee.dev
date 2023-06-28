@@ -13,15 +13,15 @@ const Project = ({ link, title, tech, year }: ProjectProps) => {
     >
       <div className="flex items-center gap-2">
         <h3>{title}</h3>
-        <div className="mx-1 flex-1 border-t-2 border-dotted border-tertiary-color group-hover:border-emerald-500"></div>
+        <div className="border-tertiary group-hover:border-accent mx-1 flex-1 border-t-2 border-dotted"></div>
         <span>{year}</span>
       </div>
-      <ul className="flex flex-wrap gap-2 text-xs text-tertiary-color">
+      <ul className="text-tertiary flex flex-wrap gap-2 text-xs">
         {...tech.map((t, i) => {
           return (
             <li key={i}>
-              <span className="group-hover:text-emerald-500">#</span>
-              <span className="group-hover:text-secondary-color">{t}</span>
+              <span className="group-hover:text-accent">#</span>
+              <span className="group-hover:text-secondary">{t}</span>
             </li>
           );
         })}
@@ -33,7 +33,7 @@ const Project = ({ link, title, tech, year }: ProjectProps) => {
 const Projects = () => {
   return (
     <div className="mt-20">
-      <h2 className="text-primary-color">Projects</h2>
+      <h2 className="text-primary">Projects</h2>
 
       <div className="mt-10 flex flex-col gap-7">
         <Project

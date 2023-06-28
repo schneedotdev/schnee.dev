@@ -18,7 +18,7 @@ const Header = () => {
           >
             <Link href="/" title="home">
               <svg
-                className="group-hover:stroke-emerald-500"
+                className="group-hover:stroke-accent"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -41,7 +41,7 @@ const Header = () => {
           >
             <Link href="/blogs" title="blogs">
               <svg
-                className="group-hover:stroke-emerald-500"
+                className="group-hover:stroke-accent"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -67,7 +67,7 @@ const Header = () => {
           >
             <Link href="/projects" title="projects">
               <svg
-                className="group-hover:stroke-emerald-500"
+                className="group-hover:stroke-accent"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -84,7 +84,7 @@ const Header = () => {
               </svg>
             </Link>
           </li>
-          <li className="z-10 h-4 w-[1px] bg-tertiary-color"></li>
+          <li className="bg-tertiary z-10 h-4 w-[1px]"></li>
           <li className="outside-padding group hover:cursor-pointer">
             <a
               href="https://www.github.com/brianschnee"
@@ -92,7 +92,7 @@ const Header = () => {
               title="github"
             >
               <svg
-                className="group-hover:stroke-emerald-500"
+                className="group-hover:stroke-accent"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -115,7 +115,7 @@ const Header = () => {
               title="linkedin"
             >
               <svg
-                className="group-hover:stroke-emerald-500"
+                className="group-hover:stroke-accent"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -139,7 +139,7 @@ const Header = () => {
               title="twitter"
             >
               <svg
-                className="group-hover:stroke-emerald-500"
+                className="group-hover:stroke-accent"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"

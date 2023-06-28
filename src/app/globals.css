@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --tailwind-emerald: #10b981;
-  --primary-color: #e2e2e2;
+  --primary: #e0e0e0;
+  --secondary: #a0a0a0;
+  --tertiary: #505050;
   --background: #18181a;
+  --accent: #10b981;
 }
 
 body {
@@ -32,7 +34,7 @@ body {
 }
 
 .outside-padding:hover {
-  color: var(--primary-color);
+  color: var(--primary);
 }
 
 .outside-padding::after {
@@ -42,7 +44,7 @@ body {
   bottom: -10px;
   width: 80%;
   height: 1px;
-  background-color: var(--tailwind-emerald);
+  background-color: var(--accent);
   opacity: 0;
   transform: translateX(-50%);
   transition: opacity 0.3s;
