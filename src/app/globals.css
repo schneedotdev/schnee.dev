@@ -48,10 +48,7 @@ body {
   transition: opacity 0.3s;
 }
 
-.p-outside.active::after {
-  opacity: 1;
-}
-
+.p-outside.active::after,
 .p-outside:hover::before {
   opacity: 1;
 }
