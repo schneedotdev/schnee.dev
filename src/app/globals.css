@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --primary:  	hsl(240, 4%, 95%);
+  --primary: hsl(240, 4%, 95%);
   /* --primary: #e0e0e0; */
-  --secondary:  	hsl(240, 4%, 75%);
+  --secondary: hsl(240, 4%, 75%);
   /* --secondary: #a0a0a0; */
-  --tertiary:  	hsl(240, 4%, 35%);
+  --tertiary: hsl(240, 4%, 35%);
   /* --tertiary: #505050; */
   --background: hsl(240, 4%, 10%);
   /* --background: #18181a; */
@@ -31,14 +31,16 @@ body {
   right: -10px;
   bottom: -10px;
   background-color: #ffffff08;
+  /* background-color: #56565d1a; */
   border-radius: 0.375rem;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
   pointer-events: none;
 }
 
 .outside-padding:hover {
   color: var(--primary);
+  
 }
 
 .outside-padding::after {
@@ -73,9 +75,9 @@ body {
 }
 
 .opaque::before {
-  background: #18181af5;
+  background: hsl(240, 4%, 10%, 97%);
 }
 
 .gradient::before {
-  background: linear-gradient(#18181a, transparent);
+  background: linear-gradient(var(--background), transparent);
 }
