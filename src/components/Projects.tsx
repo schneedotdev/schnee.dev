@@ -54,7 +54,7 @@ const Projects = () => {
         />
         <Project
           title="Attri Enterprises"
-          link="https://github.com/brianschnee/attri-optimized"
+          link="https://github.com/brianschnee/attrienterprises-optimized"
           year={"'23"}
           tech={["typescript", "preact", "astrobuild", "css", "vercel"]}
         />
