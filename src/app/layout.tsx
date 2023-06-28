@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={scope.className}>
         <div className="flex flex-col items-center">
-          <div className="flex max-w-2xl flex-col px-12 pb-12 text-sm text-secondary-color">
+          <div className="flex w-[42rem] max-w-2xl flex-col px-12 pb-12 text-sm text-secondary-color">
             <Header />
             {children}
             <Footer />
