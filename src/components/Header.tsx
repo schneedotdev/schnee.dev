@@ -1,12 +1,21 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
+
   return (
     <>
       <div className="mt-28 w-full lg:mt-36"></div>
       <nav className="fixed z-10 w-full max-w-xl">
         <ul className="outside-padding-cover opaque pointer-events-auto flex w-full gap-8 pb-1 pt-12 lg:pt-20">
-          <li className="outside-padding active group hover:cursor-pointer">
+          <li
+            className={`outside-padding group hover:cursor-pointer ${
+              pathname === "/" && "active"
+            }`}
+          >
             <Link href="/" title="home">
               <svg
                 className="group-hover:stroke-emerald-500"
@@ -25,7 +34,11 @@ const Header = () => {
               </svg>
             </Link>
           </li>
-          <li className="outside-padding group hover:cursor-pointer">
+          <li
+            className={`outside-padding group hover:cursor-pointer ${
+              pathname === "/blogs" && "active"
+            }`}
+          >
             <Link href="/blogs" title="blogs">
               <svg
                 className="group-hover:stroke-emerald-500"
@@ -47,7 +60,11 @@ const Header = () => {
               </svg>
             </Link>
           </li>
-          <li className="outside-padding group hover:cursor-pointer">
+          <li
+            className={`outside-padding group hover:cursor-pointer ${
+              pathname === "/projects" && "active"
+            }`}
+          >
             <Link href="/projects" title="projects">
               <svg
                 className="group-hover:stroke-emerald-500"
