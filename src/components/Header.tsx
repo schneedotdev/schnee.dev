@@ -24,7 +24,7 @@ const Header = () => {
                 height="16"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#e2e2e2"
+                stroke="var(--primary)"
                 stroke-width="1.25"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -47,7 +47,7 @@ const Header = () => {
                 height="16"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#e2e2e2"
+                stroke="var(--primary)"
                 stroke-width="1.25"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -73,7 +73,7 @@ const Header = () => {
                 height="16"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#e2e2e2"
+                stroke="var(--primary)"
                 stroke-width="1.25"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -84,7 +84,7 @@ const Header = () => {
               </svg>
             </Link>
           </li>
-          <li className="bg-tertiary z-10 h-4 w-[1px]"></li>
+          <li className="z-10 h-4 w-[1px] bg-tertiary"></li>
           <li className="outside-padding group hover:cursor-pointer">
             <a
               href="https://www.github.com/brianschnee"
@@ -98,7 +98,7 @@ const Header = () => {
                 height="16"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#e2e2e2"
+                stroke="var(--primary)"
                 strokeWidth="1.25"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -121,7 +121,7 @@ const Header = () => {
                 height="16"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#e2e2e2"
+                stroke="var(--primary)"
                 strokeWidth="1.25"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -145,7 +145,7 @@ const Header = () => {
                 height="16"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#e2e2e2"
+                stroke="var(--primary)"
                 strokeWidth="1.25"
                 strokeLinecap="round"
                 strokeLinejoin="round"
