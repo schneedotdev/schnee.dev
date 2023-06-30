@@ -10,8 +10,8 @@ type CompileMDX = {
 const rootDir = path.join(process.cwd(), "src", "app", "content");
 
 export const getBlogBySlug = async (slug: string) => {
-  const filePath = path.join(rootDir, slug);
   const realSlug = slug.replace(/\.mdx$/, "");
+  const filePath = path.join(rootDir, `${realSlug}.mdx`);
 
   const fileContent = fs.readFileSync(filePath, { encoding: "utf-8" });
 
