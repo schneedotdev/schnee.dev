@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type ProjectProps = {
   link: string;
   title: string;
@@ -13,10 +15,10 @@ const Project = ({ link, title, tech, year }: ProjectProps) => {
     >
       <div className="flex items-center gap-2">
         <h3>{title}</h3>
-        <div className="border-tertiary group-hover:border-accent mx-1 flex-1 border-t-2 border-dotted"></div>
+        <div className="mx-1 flex-1 border-t-2 border-dotted border-tertiary group-hover:border-accent"></div>
         <span>{year}</span>
       </div>
-      <ul className="text-tertiary flex flex-wrap gap-2 text-xs">
+      <ul className="flex flex-wrap gap-2 text-xs text-tertiary">
         {...tech.map((t, i) => {
           return (
             <li key={i}>
@@ -33,7 +35,9 @@ const Project = ({ link, title, tech, year }: ProjectProps) => {
 const Projects = () => {
   return (
     <div className="mt-20">
-      <h2 className="text-primary">Projects</h2>
+      <h2 className="text-primary">
+        <Link href="/projects">Projects</Link>
+      </h2>
 
       <div className="mt-10 flex flex-col gap-7">
         <Project

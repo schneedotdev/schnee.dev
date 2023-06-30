@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type BlogProps = {
   title: string;
   date: string;
@@ -23,7 +25,9 @@ const Blog = ({ title, date }: BlogProps) => {
 export const BlogPreview = () => {
   return (
     <div className="mt-20 w-full">
-      <h2 className="text-primary">Blogs</h2>
+      <h2 className="text-primary">
+        <Link href="/blogs">Blogs</Link>
+      </h2>
 
       <div className="mt-10 grid grid-cols-1 gap-7 sm:grid-cols-3 sm:grid-rows-1">
         <Blog
