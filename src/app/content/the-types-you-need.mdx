@@ -1,0 +1,220 @@
+---
+title: 'The Types You Need - Learning TypeScript'
+date: 'Mar 13, 2023'
+---
+This article is a section broken off from my post, [How to Learn and Use TypeScript: A Comprehensive Beginner's Guide](https://dev.to/brianschnee/how-to-learn-and-use-typescript-a-comprehensive-beginners-guide-5l). If you haven't read that post yet, I encourage you to start there. You will later be led back to here in the section "The Types You Need."
+
+In this article, we'll cover the most commonly used types in TypeScript. As we go through them, I've provided links to code examples that you can view on the TypeScript Playground. I recommend opening the examples and seeing the natural inference that takes place. Thank you and enjoy!
+
+---
+
+## The Types You Need
+
+By default, TypeScript can understand a great deal about our code without requiring any additional effort on our part. This is called inference. Through inference, TypeScript can often determine the type of a value based on its usage.
+
+An easy way to appreciate this phenomenon is to hover over your editor’s variables, methods, or function declarations. This can be especially helpful when working with libraries, as hovering over code can reveal valuable insights about data shapes and usage of methods. The best part is that this approach can save time that would otherwise be spent searching through documentation.
+
+While introducing types, we will see a structure on hover that resembles: let str: string. To read this as if it were English, we would say that "str is of type string" or "str is a string type.” We denote types with the : syntax followed by the type of value we want to store.
+
+### Type Index
+
+1. [number](#number)
+2. [string](#string)
+3. [boolean](#boolean)
+4. [any](#any)
+5. [unknown](#unknown)
+6. [const](#const)
+7. [unions](#unions)
+8. [undefined](#undefined)
+9. [null](#null)
+10. [arrays](#arrays)
+11. [objects](#objects)
+12. [parameters](#parameters)
+13. [return types](#return-types)
+14. [void](#void)
+15. [methods](#methods)
+16. [generics](#generics)
+17. [custom types](#custom-types)
+18. [intersections](#intersections)
+
+### number
+
+The `number` type represents any number in JavaScript, including negative numbers, NaN, and Infinity.
+
+![Type inference for a number](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mtp4zw6vdnh6nkra3gr6.png)
+
+[Number Code Example](https://www.typescriptlang.org/play?#code/DYUwLgBAdgrgthAvBAjABgNwChYOQJkyA)
+
+### string
+
+The `string` type represents any collection of characters and can be declared with either single or double quotes.
+
+![Type Inference for a string](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hdz9rdaoxkd8kxaj5ipe.png)
+
+[String Code Example](https://www.typescriptlang.org/play?#code/DYUwLgBAzmBOEF4ICIAWJjAPbINwCgZ4kByAdy1mABMTcg)
+
+### boolean
+
+The `boolean` type refers to true or false.
+
+![Type inference for a boolean](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vmq11a3ztxlu9rc8xerk.png)
+
+[Boolean Code Example](https://www.typescriptlang.org/play?#code/DYUwLgBARg9jwQLwTAJwK4gNwChbyQgDMBDYAZ2yA)
+
+### any
+
+The `any` type typically occurs when a value or variable type cannot be inferred, meaning that the type can be "any" type. When writing code, we usually want to be in an any-less environment. Any doesn't provide type-safety, meaning we operate in JavaScript land.
+
+![Type inference for any](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a7ow599cxfpqkx7e7gd0.png)
+
+[Any Type Code Example](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABAEzgUwM4GU4Fs1QAWMYA5gBQBuAhgDYhoBci1YAngJSIDeAUIoggIMcWmgB0tOBRr00HXgF8gA)
+
+### unknown
+
+The `unknown` type is a safer, more descriptive way to define when you don’t know the type of value. It's a great choice instead of using `any` in specific scenarios. It's safer because TypeScript will force us to perform a runtime check or type assertion before the value can be used. Although this seems annoying, it allows us to maintain type safety. A typical use case of unknown could be typing the return of an API call.
+
+![making a request](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vscsd3h7631a86u94cyc.png)
+
+[Unknown Code Example](https://www.typescriptlang.org/play?#code/MYewdgzgLgBATgUwgB3BBAuGBXMBrMEAdzBgF4YAzBKYACwAoByOqKZCDAei4QA8AhgFtkAGwQA6UEK4BGJgEoA3EA)
+
+### const
+
+When we declare a variable with the `const` keyword, the value is considered `Readonly`, meaning the value can never be mutated. In TypeScript, this changes the type of a value from its `primitive type` to what’s referred to as a `literal type`, which means that the type of a value is just that value.
+
+*Note that const only has the `literal type` effect for JavaScript primitives (number, boolean, string, symbol, bigint, undefined, and null). This is because the value assigned to the variable cannot be changed without reassignment, unlike `arrays` or `objects` that can gain new properties or elements without being reassigned.*
+
+![Type Inference for const](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/avkeygemvsceow4lpmqu.png)
+
+[Const Code Example](https://www.typescriptlang.org/play?#code/MYewdgzgLgBNBOMC8MBEB3AFgQ1gExBgE8QBXGAWwFNswYBJAcgpmxgBsBLKK+bdmFCIAHKqiA)
+
+### unions
+
+The `|` operator specifies a `union` of types. A union allows a variable to hold values of different types. _It's possible to chain together unions of types by using multiple unions in succession._
+
+![union types](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/188idxagc2sc4yqti3o6.png)
+
+[Union Code Example](https://www.typescriptlang.org/play?#code/DYUwLgBAbghsCuIBcEB28C2AjEAnCAPhAM5i4CWqA5gNwBQsCIEAvBAIwAM9jirEAIjAhUAmkA)
+
+### undefined
+
+The `undefined` type occurs when we explicitly define the behavior. We can type something as undefined, but a more common use case happens when we use the optional syntax `?` for function parameters or properties of an object type. Defining an optional type will create a union of the specified type and undefined.
+
+![Optional Parameters](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/48o04yxsqk17j24decpb.png)
+
+[Undefined Code Example](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABABwE4zFAcgQwLYCmAFMDKgM5QBcil6YA5gDSIA2OlA-DXRgwJSIA3gChEiEQF8gA)
+
+### null
+
+The `null` type can be used in a few different places, but it's most commonly used in a union as the return type of a function or to store a variable’s default value that may change later.
+
+![String or null union type](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dsmfo6chmnscoovquq73.png)
+
+[Null Code Example](https://www.typescriptlang.org/play?#code/DYUwLgBAbghsCuIBcEDOYBOBLAdgcwgB8Id5hgIBeEs4AbgCgGsAzACk0QEoIBvBiNDiIqEAEQALEOQD2YhgF8gA)
+
+### arrays
+
+The `array` type houses a list of elements of a specific type. Remember that union types are types themselves, which means that if you specify an array of union types, the array can hold multiple kinds of elements.
+
+Two different kinds of syntax can be used to define an array type. The first way and way in which you'll see arrays denoted is to use square brackets `[]`. The second way is to define a `type constructor` for arrays, `Array<number>`, which we will cover later with generics.
+
+![Array of a union between a string and number](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9fwxftwmh5gvzdj6fdjz.png)
+
+[Array Code Example](https://www.typescriptlang.org/play?#code/MYewdgzgLgBAhgJwTAvDA2gIigCwJZgDmmANDAIwC6A3EA)
+
+### objects
+
+The `object` type is a collection of types. Unlike unions, object types are precise declarations and require using the property keys you define and the correct type of values they store. Object types can house as many properties and different kinds of types as you would like, including other object types. You can create an object type by using curly braces `{}` and adding a property name and the type of the value in the structure of a regular JavaScript object.
+
+![Object type with a firstName and lastName property typed as strings](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1me0q7xa26yn87ne9gl1.png)
+
+[Object Code Example](https://www.typescriptlang.org/play?#code/MYewdgzgLgBADgUwE4XALhgbxgMwJYpQByAhgLYIbRJ5gDmANDADYnSkVVQ30wC+MALxYAUDFwF25SjABEAIRAAjWQzEs2xaRlkBhEABNkskXyA)
+
+### parameters
+
+As seen before, you will want to type the parameters in a function. This is super helpful for self-documenting and minimally validating the inputs of a function.
+
+![Typing function parameters](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9ec8hvcu930t0zpr6lvw.png)
+
+[Parameter Code Example](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABAWxAG1gBzQTwBQCGAXImCMgEYCmATgDSIUlmW0CUiA3gFCKI1UoIGkgKIAVIwDc3AL5A)
+
+### return types
+
+Return types can be automatically inferred in typescript. If you take the example from the parameters section, TypeScript already knows the return value will be a number. Let’s switch up the type of one of the variables and add an explicit return type to state our intentions.
+
+![Return type of function](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yf78iuznz1q0472mkoge.png)
+
+[Return Code Example](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABAWxAG1gBzQTwBQCGAXImCMgEYCmATgDSIUkDOUNMYA5gJQlmW1EAbwBQiRDSpQQNJAUQAqRADly1GngrcA3CIC+QA)
+
+_Note that we had to convert `b` from a `string` to a `number`; otherwise, TypeScript would tell us something is wrong._
+
+### void
+
+A function that does not return a value is said to return `void`. This is automatically inferred if a function does not include the `return` keyword. However, typing the return can give us type safety within the function, ensuring we aren't unintentionally returning.
+
+![Void function return](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kmjbtf6eoz722wzv1umj.png)
+
+[Void Code Example](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABABwE4zFAyiAtgCgEMAuRMPAIwFNUAaRC083a1ASlIDc4YATRAN4AoRIggIAznAA2VAHTS4AcyKIA1AzYBuIQF8gA)
+
+### methods
+
+Creating `method` types can define the shape of a function's inputs and return. In the example below, we construct a type for a method belonging to an object.
+
+![Example of a method being types](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lj3xec3r5fg4z46ot7nt.png)
+
+[Method Code Example](https://www.typescriptlang.org/play?#code/MYewdgzgLgBMCGUBcMDeAoGMzwLYFMVoAnASzAHMAaTGCAB33gGsUAKCEAVzABMioZSgEoYAXgB8MAG4hSvdAF9xaWjgIoA5ABVSuTTSwMmrGB259RkuOE4AbfADo7ICuZ69hS9OgRRHxixsmgQgAO6awgDcQA)
+
+### generics
+
+In TypeScript, generics are a way to parameterize types and functions to work with any type instead of a specific one. It's a way to define the structure of a type while being agnostic to the underlying operations of that structure. Generics are commonly seen throughout usage with external JavaScript libraries, and they are powerful but tricky to understand and read errors from.
+
+For our example, I will show you the instance mentioned in the Arrays section where we use the Array constructor. The Array constructor allows us to pass in a type that will comprise the elements of the array.
+
+_To learn how to construct generic types, visit [Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html). We will skip over their creation because they aren't necessary when starting. It is important to see the constructors for these generic types, like in the example below._
+
+![Array constructor](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yudr3sauupz6kju2we1f.png)
+
+[Generics Code Example](https://www.typescriptlang.org/play?#code/MYewdgzgLgBNBOBLMBzCAuGBBe8CGAngDwLIoB8MAvDANoBEpq9ANDPQKYA2HAth2CgR6AXQDcQA)
+
+### custom types
+
+Creating your own types is valuable when you want to add semantic meaning to a type, decrease the size of a type declaration, and export a type to be used throughout your application. Custom types typically follow the Pascal Case naming convention where the first letter of every word is capitalized, including the very first word, "MyCustomType."
+
+#### type keyword
+
+We can declare our own types in TypeScript using the `type` keyword, followed by a name and set equal to any type we previously learned.
+
+In the Objects section, we created a type inline. Let's see what it would look like to abstract an object type.
+
+![Using the type Keyword](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9r6ro609swise0wj894r.png)
+
+[Type Keyword Code Example](https://www.typescriptlang.org/play?#code/C4TwDgpgBAqgzhATlAvFA3gKClCBbAQwEsAbALijmESIDsBzAGmygFcFFaC8IKqaGzHGAJw4AdwD2iACZ9qdepgC+mTAGNJtKlABGk3RXhJUGFvmLkoAIn26AAvUKkAdJrzWhbDlx4VbBpoySJ4sImJSsv7hEtIy1ipAA)
+
+_Remember that the curly braces indicate an object type. We can set a type equal to anything, such as primitives, unions, objects, arrays, etc._
+
+#### interfaces
+
+Using interfaces acts very similar to using the type keyword. They both generate the same thing, but interfaces have a few quirks. Some say it is preference what you use, but due to the potential performance implications, it is generally advised to use the type keyword unless you need to use the `extends` keyword. The extends keyword is used to inherit properties and methods from another type, and it’s exactly like how inheritance works in Object-Oriented Programming. Another distinction between interfaces and the type keyword is that interfaces must hold Object types, and the type keyword can hold anything. Because of this, interfaces do not use an equal sign. 
+
+Here is an example of an interface using the extends keyword.
+
+![Typing with interfaces](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/96v1yqtubsd3gki81reu.png)
+
+[Interface Code Example](https://www.typescriptlang.org/play?#code/JYOwLgpgTgZghgYwgAgIImAWzgG2QbwChlkBnABwgWAlIC4ywpQBzAGmORwhBbAAsAkiABiECGAYgArpgBG0QgF9ChUJFiIUAZRBwA1iggAPSCAAmpNBmx4iJAG48A9pmfT6yOc+fc4IZVUEZxBSMGRguSg4Bl0DFABeAk4KKhpPACJSPUMMjhJuXgFhMQkGABZ85CcQV3dPJmkIZSA)
+
+_When creating any object-related type, you can separate key-value pairs with commas, semi-colons, or nothing, as long as they sit on their own lines._
+
+### intersections
+
+An `intersection` defines a combination of multiple types. Unlike a union, where we specify a type as one type or another, an intersection will combine the properties of various object types into a brand-new type. Meaning you must satisfy the behavior of both types combined.
+
+![Intersection of types](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6awh7k1gnz8ebvizlihc.png)
+
+[Intersection Code Example](https://www.typescriptlang.org/play?#code/C4TwDgpgBAqgzhATlAvFA3lAdgQwLYQBcUcwiAllgOYA0U5AJsaRdVAL4DcAUKJFACUA9gBtoaTIlFEoAcgCCDPJVlQAPnPhJVXXuGhbEAdXLAAFsLGpYCZADJB0ntwDGQrKSgBXW8UMnzS3EMbihsfBlZACEKHCxZGlD6JjkcAGYRAGsAKzgGAA4AFiwChKSpMWJZQ1ludiA)
+
+## Conclusion
+
+!["Fin", end of article](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tmuleo5konfj3s6dwrow.jpg)
+
+You made it! Thank you for spending the time to read what I wrote. If you found this article helpful and enjoyed learning about TypeScript, consider sharing it with others. Feedback and suggestions for future topics are always welcome. 
+
+For further TypeScript exploration, I recommend heading back to my blog post [How to Learn and Use TypeScript: A Comprehensive Beginner's Guide](https://dev.to/brianschnee/how-to-learn-and-use-typescript-a-comprehensive-beginners-guide-5l) where you'll next learn about how to benefit from your coding environment, read error messages and use TypeScript in your projects.
