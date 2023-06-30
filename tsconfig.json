@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/blogs/[slug]/page.jsx", "src/app/blogs/page.jsx", "src/lib/mdx/index.js", "mdx-components.tsx"],
   "exclude": ["node_modules"]
 }
