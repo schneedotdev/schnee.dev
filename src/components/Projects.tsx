@@ -39,7 +39,7 @@ const Projects = () => {
         <Link href="/projects">Projects</Link>
       </h2>
 
-      <div className="mt-10 flex flex-col gap-7">
+      <section className="mt-10 flex flex-col gap-7">
         <Project
           title="Climbers Connect"
           link="https://github.com/brianschnee/climbers-connect"
@@ -104,7 +104,7 @@ const Projects = () => {
             "mongoose",
           ]}
         />
-      </div>
+      </section>
     </div>
   );
 };
