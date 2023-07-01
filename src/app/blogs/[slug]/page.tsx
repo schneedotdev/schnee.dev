@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Params) {
 const Page = async ({ params }: Params) => {
   const { content } = await getPageContent(params.slug);
 
-  return content;
+  return <div className="prose-custom-colors">{content}</div>;
 };
 
 export default Page;
