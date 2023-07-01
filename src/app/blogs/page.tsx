@@ -15,6 +15,7 @@ const BlogsPage = async () => {
         experiences with others. I hope you take the time to explore my blog
         articles.
       </p>
+      <hr className="mt-10 border-tertiary" />
       <section className="mt-10 flex flex-col gap-7">
         {blogs
           .sort((a, b) => {
