@@ -1,29 +1,7 @@
 import Link from "next/link";
+import Blog from "./Blog";
 
-type BlogProps = {
-  title: string;
-  date: string;
-  slug: string;
-};
-
-export const Blog = ({ title, date, slug }: BlogProps) => {
-  return (
-    <Link
-      className="outside-padding group flex h-full flex-col justify-between gap-3"
-      href={`blogs/${slug}`}
-    >
-      <h3
-        className="group-hover:underline group-hover:decoration-accent
-      group-hover:underline-offset-4"
-      >
-        {title}
-      </h3>
-      <time className="text-tertiary group-hover:text-secondary">{date}</time>
-    </Link>
-  );
-};
-
-export const BlogPreview = () => {
+const Preview = () => {
   return (
     <div className="mt-20 w-full">
       <h2 className="text-primary">
@@ -52,3 +30,5 @@ export const BlogPreview = () => {
     </div>
   );
 };
+
+export default Preview;

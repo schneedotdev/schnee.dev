@@ -1,6 +1,6 @@
 import { serif } from "@/lib/fonts";
 import { getAllBlogsMeta } from "@/lib/mdx";
-import { Blog } from "@/components/Blogs";
+import Blog from "@/components/Blog";
 
 const BlogsPage = async () => {
   const blogs = await getAllBlogsMeta();
