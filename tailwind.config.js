@@ -23,16 +23,16 @@ module.exports = {
       typography: {
         "custom-colors": {
           css: {
-            "h2, h3, h4, h5, h6": {
+            "h1, h2, h3, h4, h5, h6": {
+              "font-weight": "bold",
               "margin-block": "2rem",
               color: "var(--primary)",
             },
             h1: {
-              "margin-bottom": "1rem",
+              "margin-top": "0rem",
               color: "var(--primary)",
               "font-size": "1.5rem",
               "line-height": "2rem",
-              "font-weight": "bold",
             },
             h2: {
               "font-size": "1.25rem",
@@ -50,10 +50,35 @@ module.exports = {
             },
             a: {
               color: "var(--accent)",
+              "font-size": "1rem",
+              "line-height": "1.5rem",
             },
             hr: {
               "margin-block": "2rem",
               "border-color": "var(--tertiary)",
+            },
+            pre: {
+              padding: "1rem",
+              background: "#f2f2f308",
+              "border-radius": ".25rem",
+            },
+            img: {
+              "margin-block": "2rem",
+              "border-radius": ".25rem",
+            },
+            code: {
+              color: "hsl(240, 4%, 85%)",
+              padding: ".125rem .25rem .125rem .25rem",
+              background: "#f2f2f31f",
+              "border-radius": ".25rem",
+              "font-size": ".9rem",
+            },
+            "pre > code": {
+              background: "none",
+            },
+            ol: {
+              "padding-left": "1.5rem",
+              "list-style-type": "decimal",
             },
           },
         },
