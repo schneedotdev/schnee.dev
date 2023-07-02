@@ -10,7 +10,7 @@ const Header = () => {
     <>
       <div className="mt-28 w-full lg:mt-36"></div>
       <nav className="fixed z-10 w-full max-w-xl">
-        <ul className="outside-padding-cover opaque pointer-events-auto flex w-full gap-8 pb-1 pt-12 lg:pt-20">
+        <ul className="outside-padding-cover opaque pointer-events-auto flex w-full gap-8 pb-1 pt-8 lg:pt-20">
           <li
             className={`outside-padding group hover:cursor-pointer ${
               pathname === "/" && "active"
@@ -25,9 +25,9 @@ const Header = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="var(--primary)"
-                stroke-width="1.25"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                 <polyline points="9 22 9 12 15 12 15 22" />
@@ -48,9 +48,9 @@ const Header = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="var(--primary)"
-                stroke-width="1.25"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
                 <polyline points="14 2 14 8 20 8" />
@@ -74,9 +74,9 @@ const Header = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="var(--primary)"
-                stroke-width="1.25"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9" />
                 <path d="M17.64 15 22 10.64" />
