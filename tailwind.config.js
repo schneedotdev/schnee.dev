@@ -53,6 +53,9 @@ module.exports = {
               "font-size": "1rem",
               "line-height": "1.5rem",
             },
+            "a:hover": {
+              color: "hsl(160, 84%, 29%)",
+            },
             hr: {
               "margin-block": "2rem",
               "border-color": "var(--tertiary)",

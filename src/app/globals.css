@@ -12,7 +12,7 @@
   --background: hsl(240, 4%, 10%);
   --background-opaque: hsl(240, 4%, 10%, 96%);
   /* --background: #18181a; */
-  --accent: #10b981;
+  --accent: hsl(160, 84%, 39%);
 }
 
 body {
