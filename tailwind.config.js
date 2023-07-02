@@ -27,7 +27,7 @@ module.exports = {
               "font-weight": "bold",
               "margin-block": "2rem",
               color: "var(--primary)",
-              "scroll-margin-top": "10.5rem",
+              "scroll-margin-top": "8rem",
             },
             h1: {
               "margin-top": "0rem",
