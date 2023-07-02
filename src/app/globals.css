@@ -12,6 +12,7 @@
   --background: hsl(240, 4%, 10%);
   --background-opaque: hsl(240, 4%, 10%, 96%);
   --accent: hsl(160, 84%, 39%);
+  scroll-behavior: smooth;
 }
 
 body {
