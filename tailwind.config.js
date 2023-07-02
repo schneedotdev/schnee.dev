@@ -30,7 +30,7 @@ module.exports = {
               "scroll-margin-top": "8rem",
             },
             h1: {
-              "margin-top": "0rem",
+              "margin-block": "0rem 1rem",
               color: "var(--primary)",
               "font-size": "1.5rem",
               "line-height": "2rem",
