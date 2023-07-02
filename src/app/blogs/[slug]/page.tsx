@@ -19,7 +19,7 @@ const Page = async ({ params }: Params) => {
   const { content } = await getPageContent(params.slug);
 
   return (
-    <div className="prose-custom-colors">
+    <main className="prose-custom-colors">
       <Link className="mb-6 inline-flex items-center gap-1" href="/blogs">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ const Page = async ({ params }: Params) => {
         Back to Blogs
       </Link>
       {content}
-    </div>
+    </main>
   );
 };
 
