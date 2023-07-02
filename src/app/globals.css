@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --primary: hsl(240, 4%, 95%);
-  --secondary: hsl(240, 4%, 75%);
+  --primary: hsl(240, 4%, 100%);
+  /* --primary: hsl(240, 4%, 95%); */
+  --secondary: hsl(240, 4%, 80%);
+  /* --secondary: hsl(240, 4%, 75%); */
   --tertiary: hsl(240, 5%, 52.4%);
   /* --tertiary: hsl(240, 4%, 35%); */
   --background: hsl(240, 4%, 10%);
