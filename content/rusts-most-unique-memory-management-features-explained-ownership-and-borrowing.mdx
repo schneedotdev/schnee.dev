@@ -1,0 +1,243 @@
+---
+title: "Rust's most unique memory management features explained - Ownership and Borrowing"
+date: "February 15, 2023"
+---
+Before jumping into what makes Rust's memory management system unique, we must define the terms we are working with. After, we can establish examples that help us understand this tricky subject. We will cover various topics to solidify your understanding of some of Rust's core concepts.
+
+## Table of Contents
+
+1. [Memory](#what-is-memory)
+2. [Memory Safety](#what-is-memory-safety)
+3. [Ownership](#what-is-ownership)
+4. [Borrowing](#what-is-borrowing)
+5. [Mutable vs. Immutable Values](#mutable-vs-immutable-values)
+6. [Rules of Ownership](#rules-of-ownership)
+7. [Conclusion](#conclusion)
+
+<h2 id="what-is-memory">What is Memory?</h2>
+
+Memory is comprised of `addresses` and `values`.
+
+An `address` is a location on your computer used to find a piece of data.
+
+A `value` is the data stored at a location on your computer.
+
+Working with memory can be dangerous, so before you start accessing random memory addresses on your computer, let's talk about those dangers and how Rust tries to mitigate them.
+
+<h2 id="what-is-memory-safety">What is Memory Safety?</h2>
+
+Working with memory is a core aspect of computing, allowing us to perform a series of tasks we refer to as our program. However, working with memory introduces a variety of pitfalls that modern languages like Rust intend to protect us from.
+
+Think of it like knocking on someone's door that doesn't expect you to be there. Not everyone is as friendly as they seem, and this is the case for accessing and attempting to mutate values stored at foreign memory addresses.
+
+Because of the bugs and errors this can produce, languages like Rust have safe strategies for accessing data in memory. Higher-level programming languages opt to shield programmers from these afflictions completely. Although this may seem a wiser option, lower-level languages enable programmers to take agency of memory. When done right, the outcome is a more efficient and performant program.
+
+Can you say 🔥**_BLAZINGLY FAST_**🔥 with me?
+
+Now, let's _Segway_ into Rust's solution...
+
+![Paul Blart segwaying into the next section of this blog](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/816u685c2amh25coeru8.jpg)
+
+---
+
+<h2 id="what-is-ownership">What is Ownership?</h2>
+
+In Rust, `ownership` is used to manage memory safely. An `owner` is a piece of code, object, or variable with complete control over the data it holds. When a variable is declared, a memory address is given to that variable. It is considered the owner of that address until it is no longer needed or ownership is transferred. This means that at some point in our program, Rust will free the memory we were using without needing to deallocate like we may have to in other languages manually. In Rust, transferring ownership is called a `move`. When ownership of a value is moved, we can no longer access the value from the first memory address.
+
+```rust
+fn main() {
+   let s1 = String::from("hello");
+   let s2 = s1; // ownership of `s1` has moved to `s2`
+
+   println!("{s1}"); /* this will result in an error, because
+                        `s1` has moved to `s2` */
+}
+```
+
+Before jumping into the ownership rules, let's define a few more terms.
+
+---
+
+<h2 id="what-is-borrowing">What is Borrowing?</h2>
+
+If a value can only have one owner, we need a way to allow other pieces of code to access the data stored in memory addresses without taking ownership. We refer to this as `borrowing`. Borrowing enables us to create a reference to another piece of data without taking responsibility for the memory. A `reference` in Rust, written with the `&` symbol, refers to a memory address that holds a value. Borrowing also ensures that you are operating on non-null, valid memory addresses.
+
+```rust
+fn main() {
+   let x = String::from("Hello, world");
+   let ref_to_x = &x; /* `ref_to_x` borrows the value
+                          stored in `x` */
+
+   println!("{ref_to_x}"); // prints "Hello, world"
+}
+```
+
+### Borrowing vs. Moving values in functions
+
+Certain behaviors of ownership can come unnatural to new users of Rust. For example, ownership is `moved` to a parameter when passing owned values as function arguments. This means the original owner will no longer have access to the value it once stored. Let's see what this looks like and how to resolve the issue.
+
+```rust
+fn main() {
+   let s = String::from("Hello, world!");
+   /* when we call `print_length()`, ownership moves to
+      the parameter `str` */
+   print_length(s);
+   /* the following line throws an error because
+      `s` no longer owns a value */
+   println!("{}", s);
+}
+
+// str takes ownership of arguments passed to this function
+fn print_length(str: String) {
+   println!("Length of string: {}", str.len());
+}
+```
+
+To avoid moving ownership to functions, we can write code that allows us to `borrow` the value instead. To do this, our function parameters should take in a reference (`&`) to a value rather than the value itself.
+
+```rust
+fn main() {
+   let s = String::from("Hello, world!");
+   print_length(&s);
+   println!("{s}"); // prints "Hello, world!"
+}
+
+fn print_length(str: &str) {
+   // prints "Length of string: 13"
+   println!("Length of string: {}", str.len());
+}
+```
+
+We can decide to move ownership into a function and later return and retake ownership. However, _it's often more common to `borrow` values_.
+
+---
+
+<h2 id="mutable-vs-immutable-values">Mutable vs. Immutable values</h2>
+
+An `immutable` value is a value that cannot change (read-only). By default, variables in Rust are immutable.
+
+```rust
+fn main() {
+   let x = 10;
+   x += 10; /* this line will throw a compile
+               time error because `x` is immutable */
+
+   println!("{x}");
+}
+```
+
+A `mutable` value is a value that can change. In Rust, we denote this with the `mut` keyword.
+
+```rust
+fn main() {
+   let mut x = 10; // `x` is defined as a mutable
+   x += 10;
+
+   println!("{x}"); // prints 20
+}
+```
+
+Note that you can pass `mutable references` by combining what we learned about `borrowing` with the `mut` keyword. First, let's understand dereferencing, and then we will jump into a code example. `Dereferencing` allows us to take a reference to a value and "follow it back" to its memory location, allowing us to modify it. This allows us to produce new results with existing data:
+
+```rust
+fn main() {
+   let mut x = 10;
+   let y = &mut x; // `y` holds a mutable reference to `x`
+   *y += 5; // this line dereferences the value stored in `y`
+
+   println!("{y}"); // prints 15
+   println!("{x}"); // also prints 15
+}
+```
+
+Since a mutable reference to `x` passes to the variable `y`, when `y` mutates, `x` reflects the changes.
+
+---
+
+<h2 id="rules-of-ownership">Rules of Ownership</h2>
+
+Rust has a few rules for ownership that allow us to compile. By abiding by the following limitations, you'll be sure to have a great relationship with your compiler:
+
+### Each value can have, at most, a single owner
+
+Under the strictness of this rule, Rust can ensure precise control of memory throughout the life of your app. If an address can have many owners, imprecise management of that memory can lead to unwanted behavior.
+
+```rust
+fn main() {
+   let s1 = String::from("hello");
+   let s2 = s1; // ownership of `s1` has moved to `s2`
+
+   println!("{s1}"); /* this will result in an error, because
+                        `s1` has moved to `s2` */
+}
+```
+
+### When the owner goes out of scope, the value will drop
+
+This ensures that memory addresses free up when they are no longer used.
+
+```rust
+fn main() {
+   let address;
+
+   {
+      // `temp` will drop when this inner scope ends
+      let temp = String::from("Hello, world!");
+      address = &temp;
+   }
+
+   /* Rust will throw a compile time error because we
+      are borrowing the value at `temp's` memory address:
+      "borrowed value does not live long enough" */
+   println!("{address}");
+}
+```
+
+### You cannot have more than one mutable reference to the same value in the same scope
+
+Allowing multiple mutable references creates ambiguity. How would we know what responsibilities we want each reference to have?
+
+```rust
+fn main() {
+   let mut s1 = String::from("hi");
+   // we cannot have two mutable references to `s1`
+   let s2 = &mut s1;
+   let s3 = &mut s1;
+
+   /* as soon as we try to make a mutation, Rust throws
+      a compile time error */
+   s2.push('!');
+   s3.push('.');
+
+   println!("{s1}");
+}
+```
+
+### You can have any number of immutable references as long as a mutable reference has not also been defined
+
+Rust will allow you to have as many `immutable` references as you want. However, if you have declared a mutable reference, you cannot also have immutable references.
+
+```rust
+fn main() {
+   let s1 = String::from("hi");
+
+   // Rust allows any number of immutable references
+   let s2 = &s1;
+   let s3 = &s1;
+   let s4 = &s1;
+
+   println!("{s2}, {s3}, {s4}"); // prints "hi, hi, hi"
+}
+```
+
+---
+
+<h2 id="conclusion">Conclusion</h2>
+
+![Looney toons that's all folks text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tif899mew5qoogsfex4u.jpg)
+
+See, wasn't too bad after all, right? Rust allows us to work with memory safely, and the compiler will ensure we are on the right path every step of the way! With an understanding of `ownership`, `borrowing`, `memory safety`, `moves`, `references`, and more, you should be off writing 🔥**_BLAZINGLY FAST_**🔥 code in no time!
+
+Thanks for reading! I hope this blog post inspired your interest in the Rust language 🦀. For more information on `Ownership` and `Borrowing`, visit [chapter 4 of The Rust Book](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html).
+
+Comments and feedback are greatly appreciated!
