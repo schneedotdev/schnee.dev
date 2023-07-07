@@ -1,10 +1,10 @@
-import { getAllBlogsMeta } from "@/lib/mdx";
+// import { getAllBlogsMeta } from "@/lib/mdx";
 import Blog from "@/components/Blog";
 import Heading from "@/components/Heading";
 import Summary from "@/components/Summary";
 
 const BlogsPage = async () => {
-  const blogs = await getAllBlogsMeta();
+  // const blogs = await getAllBlogsMeta();
 
   return (
     <>
@@ -16,7 +16,7 @@ const BlogsPage = async () => {
       />
       <hr className="mt-10 border-tertiary" />
       <section className="mt-10 flex flex-col gap-7">
-        {blogs
+        {/* {blogs
           .sort((a, b) => {
             const aDate = new Date(a.date);
             const bDate = new Date(b.date);
@@ -31,7 +31,7 @@ const BlogsPage = async () => {
               slug={blog.slug}
               key={blog.title}
             />
-          ))}
+          ))} */}
       </section>
     </>
   );

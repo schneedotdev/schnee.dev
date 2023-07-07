@@ -1,22 +1,22 @@
-import { getBlogBySlug } from "@/lib/mdx";
+// import { getBlogBySlug } from "@/lib/mdx";
 import Link from "next/link";
 
 type Params = {
   params: { slug: string };
 };
 
-const getPageContent = async (slug: string) => {
-  const { meta, content } = await getBlogBySlug(slug);
-  return { meta, content };
-};
+// const getPageContent = async (slug: string) => {
+//   const { meta, content } = await getBlogBySlug(slug);
+//   return { meta, content };
+// };
 
-export async function generateMetadata({ params }: Params) {
-  const { meta } = await getPageContent(params.slug);
-  return { title: meta.title };
-}
+// export async function generateMetadata({ params }: Params) {
+//   const { meta } = await getPageContent(params.slug);
+//   return { title: meta.title };
+// }
 
 const Page = async ({ params }: Params) => {
-  const { meta, content } = await getPageContent(params.slug);
+  // const { meta, content } = await getPageContent(params.slug);
 
   return (
     <main className="prose-custom-colors">
@@ -36,9 +36,9 @@ const Page = async ({ params }: Params) => {
         </svg>{" "}
         Back to Blogs
       </Link>
-      <h1>{meta.title}</h1>
-      <time className="mb-5 inline-block text-tertiary">{meta.date}</time>
-      {content}
+      {/* <h1>{meta.title}</h1> */}
+      {/* <time className="mb-5 inline-block text-tertiary">{meta.date}</time> */}
+      {/* {content} */}
     </main>
   );
 };
