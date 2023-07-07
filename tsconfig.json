@@ -20,7 +20,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"]
     }
   },
   "include": [
@@ -28,8 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/blogs/[slug]/page.tsx",
-    "src/app/blogs/page.tsx"
+    "app/blogs/[slug]/page.tsx",
+    "app/blogs/page.tsx"
   ],
   "exclude": ["node_modules"]
 }

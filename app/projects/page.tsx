@@ -1,5 +1,5 @@
-import Heading from "@/components/Heading";
-import Summary from "@/components/Summary";
+import Heading from "../../components/Heading";
+import Summary from "../../components/Summary";
 
 export default function ProjectPage() {
   return (

@@ -18,7 +18,7 @@ const computedFields = {
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
-  filePathPattern: `blog/**/*.mdx`,
+  filePathPattern: `/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -38,7 +38,7 @@ export const Post = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-  contentDirPath: "src/content",
+  contentDirPath: "content",
   documentTypes: [Post],
   mdx: {
     remarkPlugins: [remarkGfm],
@@ -65,11 +65,11 @@ export default makeSource({
         rehypeAutolinkHeadings,
         {
           properties: {
-            className: ['subheading-anchor'],
-            ariaLabel: 'Link to section'
-          }
-        }
-      ]
+            className: ["subheading-anchor"],
+            ariaLabel: "Link to section",
+          },
+        },
+      ],
     ],
   },
 });

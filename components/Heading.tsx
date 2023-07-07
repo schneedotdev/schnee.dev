@@ -1,4 +1,4 @@
-import { serif } from "@/lib/fonts";
+import { serif } from "../lib/fonts";
 
 type HeadingProps = {
   content: React.ReactNode;

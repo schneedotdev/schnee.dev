@@ -1,7 +1,7 @@
 // import { getAllBlogsMeta } from "@/lib/mdx";
-import Blog from "@/components/Blog";
-import Heading from "@/components/Heading";
-import Summary from "@/components/Summary";
+import Blog from "../../components/Blog";
+import Heading from "../../components/Heading";
+import Summary from "../../components/Summary";
 
 const BlogsPage = async () => {
   // const blogs = await getAllBlogsMeta();
