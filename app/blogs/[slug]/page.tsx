@@ -1,22 +1,22 @@
-// import { getBlogBySlug } from "@/lib/mdx";
 import Link from "next/link";
+import { allPosts } from "contentlayer/generated";
+import { notFound } from "next/navigation";
+import { Mdx } from "@/components/mdx-components";
 
 type Params = {
   params: { slug: string };
 };
 
-// const getPageContent = async (slug: string) => {
-//   const { meta, content } = await getBlogBySlug(slug);
-//   return { meta, content };
-// };
+async function getPostFromParams(slug: string) {
+  const post = allPosts.find((post) => post.slugAsParams === slug);
 
-// export async function generateMetadata({ params }: Params) {
-//   const { meta } = await getPageContent(params.slug);
-//   return { title: meta.title };
-// }
+  if (!post) notFound();
+
+  return post;
+}
 
 const Page = async ({ params }: Params) => {
-  // const { meta, content } = await getPageContent(params.slug);
+  const post = await getPostFromParams(params.slug);
 
   return (
     <main className="prose-custom-colors">
@@ -36,9 +36,9 @@ const Page = async ({ params }: Params) => {
         </svg>{" "}
         Back to Blogs
       </Link>
-      {/* <h1>{meta.title}</h1> */}
-      {/* <time className="mb-5 inline-block text-tertiary">{meta.date}</time> */}
-      {/* {content} */}
+      <h1>{post.title}</h1>
+      <time className="mb-5 inline-block text-tertiary">{post.date}</time>
+      <Mdx code={post.body.code} />
     </main>
   );
 };
