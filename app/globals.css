@@ -19,14 +19,6 @@ body {
   background: var(--background);
 }
 
-a {
-  color: var(--accent);
-}
-
-a:hover {
-  color: #0c885f;
-}
-
 .outside-padding {
   position: relative;
   transition: background-color 0.3s;

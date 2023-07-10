@@ -36,6 +36,12 @@ module.exports = {
               "font-size": "1rem",
               "line-height": "1.75rem",
             },
+            a: {
+              color: "var(--accent)",
+            },
+            "a:hover": {
+              color: "#0c885f",
+            },
             pre: {
               position: "relative",
               "border-radius": ".375rem",
