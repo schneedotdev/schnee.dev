@@ -20,7 +20,10 @@ const Page = async ({ params }: Params) => {
 
   return (
     <main className="prose-custom-colors">
-      <Link className="mb-6 inline-flex items-center gap-1" href="/blogs">
+      <Link
+        className="mb-6 inline-flex items-center gap-1 text-base"
+        href="/blogs"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -29,14 +32,14 @@ const Page = async ({ params }: Params) => {
           fill="none"
           stroke="var(--accent)"
           strokeWidth="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <polyline points="15 18 9 12 15 6" />
         </svg>{" "}
         Back to Blogs
       </Link>
-      <h1>{post.title}</h1>
+      <h1 className="mb-4 mt-0 text-2xl">{post.title}</h1>
       <time className="mb-5 inline-block text-tertiary">{post.date}</time>
       <Mdx code={post.body.code} />
     </main>
