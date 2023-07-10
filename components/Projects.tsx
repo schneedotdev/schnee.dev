@@ -92,7 +92,7 @@ const Projects = () => {
         />
         <Project
           title="Find a dev"
-          link="https://github.com/brianschnee/findadev"
+          link="https://github.com/brianschnee/find-a-dev"
           year="'22"
           tech={[
             "javascript",
