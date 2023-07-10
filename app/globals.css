@@ -80,3 +80,8 @@ body {
 .gradient::before {
   background: linear-gradient(var(--background-opaque), transparent);
 }
+
+pre > code {
+  background: "none";
+  border: none;
+}

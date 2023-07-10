@@ -20,9 +20,18 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/blogs/[slug]/page.tsx", "src/app/blogs/page.tsx", "src/lib/mdx/index.ts", "mdx-components.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".contentlayer/generated",
+    "app/blogs/[slug]/page.tsx",
+    "app/blogs/page.tsx"
+  ],
   "exclude": ["node_modules"]
 }

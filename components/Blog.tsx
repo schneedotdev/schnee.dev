@@ -10,7 +10,7 @@ const Blog = ({ title, date, slug }: BlogProps) => {
   return (
     <Link
       className="outside-padding group flex h-full flex-col justify-between gap-3"
-      href={`blogs/${slug}`}
+      href={slug}
     >
       <h3
         className="group-hover:underline group-hover:decoration-accent

@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -24,12 +24,6 @@ module.exports = {
               color: "var(--primary)",
               "scroll-margin-top": "8rem",
             },
-            h1: {
-              "margin-block": "0rem 1rem",
-              color: "var(--primary)",
-              "font-size": "1.5rem",
-              "line-height": "2rem",
-            },
             h2: {
               "font-size": "1.25rem",
               "line-height": "1.75rem",
@@ -38,46 +32,35 @@ module.exports = {
               "font-size": "1.125rem",
               "line-height": "1.75rem",
             },
-            p: {
+            h4: {
               "font-size": "1rem",
-              "line-height": "1.5rem",
-              "margin-block": "1rem",
-              color: "var(--secondary)",
+              "line-height": "1.75rem",
             },
             a: {
               color: "var(--accent)",
-              "font-size": "1rem",
-              "line-height": "1.5rem",
             },
             "a:hover": {
-              color: "hsl(160, 84%, 29%)",
-            },
-            hr: {
-              "margin-block": "2rem",
-              "border-color": "var(--tertiary)",
+              color: "#0c885f",
             },
             pre: {
-              padding: "1rem",
+              position: "relative",
+              "border-radius": ".375rem",
               background: "#f2f2f308",
-              "border-radius": ".25rem",
-            },
-            img: {
-              "margin-block": "2rem",
-              "border-radius": ".25rem",
+              padding: "1rem",
             },
             code: {
+              "font-size": ".875rem",
+              "line-height": "1.25rem",
               color: "hsl(240, 4%, 85%)",
               padding: ".125rem .25rem .125rem .25rem",
               background: "#f2f2f31f",
+              border: "1px solid var(--tertiary)",
               "border-radius": ".25rem",
-              "font-size": ".9rem",
+              "overflow-x": "auto",
             },
             "pre > code": {
               background: "none",
-            },
-            ol: {
-              "padding-left": "1.5rem",
-              "list-style-type": "decimal",
+              border: "none",
             },
           },
         },
