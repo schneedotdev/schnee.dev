@@ -19,6 +19,14 @@ body {
   background: var(--background);
 }
 
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: #0c885f;
+}
+
 .outside-padding {
   position: relative;
   transition: background-color 0.3s;
@@ -79,4 +87,9 @@ body {
 
 .gradient::before {
   background: linear-gradient(var(--background-opaque), transparent);
+}
+
+pre > code {
+  background: "none";
+  border: none;
 }
