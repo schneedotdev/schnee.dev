@@ -1,7 +1,7 @@
-import Header from "../components/Header";
+import Header from "@/components/Header";
 import "./globals.css";
-import { scope } from "../lib/fonts";
-import Footer from "../components/Footer";
+import { scope } from "@/lib/fonts";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Hire Me!",

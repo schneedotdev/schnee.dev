@@ -1,8 +1,8 @@
-import Experience from "../components/Experience";
-import Projects from "../components/Projects";
-import Summary from "../components/Summary";
-import Preview from "../components/Preview";
-import Heading from "../components/Heading";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import Summary from "@/components/Summary";
+import Preview from "@/components/Preview";
+import Heading from "@/components/ui/Heading";
 
 export default function Home() {
   return (
