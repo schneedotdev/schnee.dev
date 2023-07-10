@@ -6,10 +6,7 @@ export default function ProjectPage() {
   return (
     <>
       <Heading content="Projects" emoji="🔨" />
-      <Summary
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam pariatur
-        voluptate quae dolor velit, harum quam atque voluptates veniam iusto?"
-      />
+      <Summary content="As a Full Stack Software Engineer, I'm confident with an array of tools and technologies. I get a kick out of transforming ideas into code. Check out my work and play around with the projects!" />
       <Image
         className="mt-10 w-full rounded-md"
         src="/assets/schneedotdev.jpg"
