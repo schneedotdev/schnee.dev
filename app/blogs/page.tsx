@@ -1,10 +1,12 @@
 // import { getAllBlogsMeta } from "@/lib/mdx";
-import Blog from "../../components/Blog";
-import Heading from "../../components/Heading";
-import Summary from "../../components/Summary";
+import Blog from "@/components/Blog";
+import Heading from "@/components/ui/Heading";
+import Summary from "@/components/Summary";
+import { allPosts } from "@/.contentlayer/generated";
+import { sortByDate } from "@/lib/utils";
 
 const BlogsPage = async () => {
-  // const blogs = await getAllBlogsMeta();
+  const blogs = sortByDate(await allPosts);
 
   return (
     <>
@@ -16,22 +18,14 @@ const BlogsPage = async () => {
       />
       <hr className="mt-10 border-tertiary" />
       <section className="mt-10 flex flex-col gap-7">
-        {/* {blogs
-          .sort((a, b) => {
-            const aDate = new Date(a.date);
-            const bDate = new Date(b.date);
-            if (aDate < bDate) return 1;
-            if (aDate > bDate) return -1;
-            return 0;
-          })
-          .map((blog) => (
-            <Blog
-              title={blog.title}
-              date={blog.date}
-              slug={blog.slug}
-              key={blog.title}
-            />
-          ))} */}
+        {blogs.map((blog) => (
+          <Blog
+            key={blog.title}
+            title={blog.title}
+            date={blog.date}
+            slug={blog.slug}
+          />
+        ))}
       </section>
     </>
   );
