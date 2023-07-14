@@ -3,15 +3,35 @@
 @tailwind utilities;
 
 :root {
+  /* Theme */
   --primary: hsl(240, 4%, 100%);
-  /* --primary: hsl(240, 4%, 95%); */
   --secondary: hsl(240, 4%, 80%);
-  /* --secondary: hsl(240, 4%, 75%); */
   --tertiary: hsl(240, 5%, 52.4%);
-  /* --tertiary: hsl(240, 4%, 35%); */
   --background: hsl(240, 4%, 10%);
   --background-opaque: hsl(240, 4%, 10%, 96%);
   --accent: hsl(160, 84%, 39%);
+
+  /* Technologies */
+  --astro: theme(colors.orange.300);
+  --cloudinary: theme(colors.indigo.300);
+  --css: theme(colors.cyan.300);
+  --ejs: theme(colors.lime.300);
+  --express: theme(colors.slate.300);
+  --javascript: theme(colors.yellow.300);
+  --mdx: theme(colors.yellow.300);
+  --mongodb: theme(colors.green.300);
+  --mongoose: theme(colors.red.300);
+  --netlify: theme(colors.teal.300);
+  --nextjs: theme(colors.zinc.300);
+  --passport: theme(colors.lime.300);
+  --nodejs: theme(colors.green.300);
+  --preact: theme(colors.purple.300);
+  --railway: theme(colors.slate.300);
+  --react: theme(colors.teal.300);
+  --tailwind: theme(colors.cyan.300);
+  --typescript: theme(colors.blue.300);
+  --vercel: theme(colors.gray.300);
+
   scroll-behavior: smooth;
 }
 
