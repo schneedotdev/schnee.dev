@@ -25,7 +25,7 @@ module.exports = {
         mongoose: "var(--mongoose)",
         netlify: "var(--netlify)",
         nextjs: "var(--nextjs)",
-        nodejs: "var(--nodejs)",
+        node: "var(--node)",
         passport: "var(--passport)",
         preact: "var(--preact)",
         railway: "var(--railway)",
