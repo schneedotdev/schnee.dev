@@ -1,11 +1,44 @@
+// import { TailwindClass } from "@/components/ui/Icon";
+
+export type Technologies =
+  | "react"
+  | "javascript"
+  | "cloudinary"
+  | "css"
+  | "node"
+  | "express"
+  | "mongodb"
+  | "mongoose"
+  | "passport"
+  | "vercel"
+  | "tailwind"
+  | "mdx"
+  | "ejs"
+  | "railway"
+  | "typescript"
+  | "nextjs"
+  | "netlify"
+  | "astro"
+  | "preact";
+
 export type ProjectProps = {
   src: string;
   site: string;
   repo: string;
   title: string;
   description: string;
-  technologies: string[];
+  technologies: Technologies[];
 };
+
+// export const techColors: Record<
+//   "react",
+//   { bg: TailwindClass<"bg">; text: TailwindClass<"text"> }
+// > = {
+//   react: {
+//     bg: "bg-teal-900",
+//     text: "text-teal-300",
+//   },
+// };
 
 export const projects: ProjectProps[] = [
   {
@@ -13,13 +46,7 @@ export const projects: ProjectProps[] = [
     site: "https://schnee.dev/",
     title: "schnee.dev",
     repo: "https://github.com/brianschnee/schnee.dev",
-    technologies: [
-      "next.js",
-      "typescript",
-      "react-server-components",
-      "mdx",
-      "tailwind",
-    ],
+    technologies: ["nextjs", "typescript", "react", "mdx", "tailwind"],
     description:
       "My personal portfolio site updated with performance and dynamic rendering of components in mind. The app is built with the recent Next.js App Router architecture and React Server Componets.",
   },
@@ -36,7 +63,7 @@ export const projects: ProjectProps[] = [
       "mongodb",
       "mongoose",
       "cloudinary",
-      "passportjs",
+      "passport",
       "railway",
     ],
     description:
@@ -47,7 +74,7 @@ export const projects: ProjectProps[] = [
     site: "https://brianschnee.com/",
     repo: "https://github.com/brianschnee/portfolio-optimized",
     title: "brianschnee.com",
-    technologies: ["astrobuild", "typescript", "preact", "css", "netlify"],
+    technologies: ["astro", "typescript", "preact", "css", "netlify"],
     description:
       "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
   },
@@ -56,7 +83,7 @@ export const projects: ProjectProps[] = [
     site: "https://attrienterprises.vercel.app/",
     repo: "https://github.com/brianschnee/attrienterprises-optimized",
     title: "attri enterprises",
-    technologies: ["astrobuild", "typescript", "preact", "css", "vercel"],
+    technologies: ["astro", "typescript", "preact", "css", "vercel"],
     description:
       "Optimized version of Attri Enterprises Website. Decreased page load times by 60% on mobile and 71% on desktops through static-site generation (SSG), image optimization, minimizing the number and size of requests, asset bundling, partial rendering, and lazy hydration.",
   },
@@ -79,7 +106,7 @@ export const projects: ProjectProps[] = [
       "express",
       "mongodb",
       "mongoose",
-      "passportjs",
+      "passport",
       "ejs",
       "railway",
     ],
