@@ -1,5 +1,3 @@
-// import { TailwindClass } from "@/components/ui/Icon";
-
 export type Technologies =
   | "react"
   | "javascript"
@@ -29,16 +27,6 @@ export type ProjectProps = {
   description: string;
   technologies: Technologies[];
 };
-
-// export const techColors: Record<
-//   "react",
-//   { bg: TailwindClass<"bg">; text: TailwindClass<"text"> }
-// > = {
-//   react: {
-//     bg: "bg-teal-900",
-//     text: "text-teal-300",
-//   },
-// };
 
 export const projects: ProjectProps[] = [
   {
@@ -92,7 +80,15 @@ export const projects: ProjectProps[] = [
     site: "https://find-a-dev.up.railway.app/",
     repo: "https://github.com/brianschnee/find-a-dev",
     title: "find a dev",
-    technologies: ["node", "express", "mongodb", "ejs", "css", "railway"],
+    technologies: [
+      "javascript",
+      "node",
+      "express",
+      "mongodb",
+      "ejs",
+      "css",
+      "railway",
+    ],
     description:
       "Find developers who are willing to offer time to tutor! Filter through a list of devs by technologiesnology.",
   },
@@ -102,6 +98,7 @@ export const projects: ProjectProps[] = [
     repo: "https://github.com/devv-work/timeato",
     title: "timeato",
     technologies: [
+      "javascript",
       "node",
       "express",
       "mongodb",
