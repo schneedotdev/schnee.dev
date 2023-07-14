@@ -27,42 +27,32 @@ const Project = ({
           <div className="flex items-center gap-2">
             <a href={repo}>
               <Icon
-                stroke={{
-                  color: "stroke-primary",
-                  hover: "hover:stroke-primary",
-                  width: 1.25,
-                }}
-                content={
-                  <>
-                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                  </>
-                }
+                name="github"
+                width="18"
+                height="18"
+                stroke="stroke-primary"
+                strokeWidth={1.25}
+                hover="hover:stroke-secondary"
               />
             </a>
             <a href={site}>
               <Icon
-                stroke={{
-                  color: "stroke-primary",
-                  hover: "hover:stroke-secondary",
-                  width: 1.25,
-                }}
-                content={
-                  <>
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                  </>
-                }
+                name="external-link"
+                width="18"
+                height="18"
+                stroke="stroke-primary"
+                strokeWidth={1.25}
+                hover="hover:stroke-secondary"
               />
             </a>
           </div>
         </div>
         <ul className="flex flex-wrap gap-2 text-xs text-tertiary">
-          {technologies.map((tech) => {
+          {technologies.map((tech, i) => {
             return (
-              <li key={tech}>
-                <div className="flex gap-1 rounded-md bg-teal-900 bg-opacity-30 px-2 py-1 text-teal-200">
+              <li key={i}>
+                <div className="flex items-center gap-1 rounded-md bg-[#ffffff] bg-opacity-5 px-2 py-1 text-secondary">
+                  <Icon name={tech} width={15} height={15} />
                   <span>{tech}</span>
                 </div>
               </li>
