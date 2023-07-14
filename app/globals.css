@@ -3,15 +3,54 @@
 @tailwind utilities;
 
 :root {
+  /* Theme */
   --primary: hsl(240, 4%, 100%);
-  /* --primary: hsl(240, 4%, 95%); */
   --secondary: hsl(240, 4%, 80%);
-  /* --secondary: hsl(240, 4%, 75%); */
   --tertiary: hsl(240, 5%, 52.4%);
-  /* --tertiary: hsl(240, 4%, 35%); */
   --background: hsl(240, 4%, 10%);
   --background-opaque: hsl(240, 4%, 10%, 96%);
   --accent: hsl(160, 84%, 39%);
+
+  /* Technologies */
+  --astro: theme(colors.orange.300);
+  --bg-astro: #c2410c26;
+  --cloudinary: theme(colors.indigo.300);
+  --bg-cloudinary: #4338ca26;
+  --css: theme(colors.cyan.300);
+  --bg-css: #0e749026;
+  --ejs: theme(colors.lime.300);
+  --bg-ejs: #4d7c0f26;
+  --express: theme(colors.slate.300);
+  --bg-express: #33415526;
+  --javascript: theme(colors.yellow.300);
+  --bg-javascript: #a1620726;
+  --mdx: theme(colors.yellow.300);
+  --bg-mdx: #a1620726;
+  --mongodb: theme(colors.green.300);
+  --bg-mongodb: #15803d26;
+  --mongoose: theme(colors.red.300);
+  --bg-mongoose: #b91c1c26;
+  --netlify: theme(colors.teal.300);
+  --bg-netlify: #0f766e26;
+  --nextjs: theme(colors.zinc.300);
+  --bg-nextjs: #3f3f4626;
+  --passport: theme(colors.lime.300);
+  --bg-passport: #4d7c0f26;
+  --node: theme(colors.green.300);
+  --bg-node: #15803d26;
+  --preact: theme(colors.purple.300);
+  --bg-preact: #7e22ce26;
+  --railway: theme(colors.slate.300);
+  --bg-railway: #33415526;
+  --react: theme(colors.teal.300);
+  --bg-react: #0f766e26;
+  --tailwind: theme(colors.cyan.300);
+  --bg-tailwind: #0e749026;
+  --typescript: theme(colors.blue.300);
+  --bg-typescript: #1d4ed826;
+  --vercel: theme(colors.gray.300);
+  --bg-vercel: #37415126;
+
   scroll-behavior: smooth;
 }
 

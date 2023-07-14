@@ -19,7 +19,7 @@ const Project = ({ link, title, tech, year }: ProjectProps) => {
         <span>{year}</span>
       </div>
       <ul className="flex flex-wrap gap-2 text-xs text-tertiary">
-        {...tech.map((t, i) => {
+        {tech.map((t, i) => {
           return (
             <li key={i}>
               <span className="group-hover:text-accent">#</span>
