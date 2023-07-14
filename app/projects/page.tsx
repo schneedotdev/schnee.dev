@@ -51,9 +51,12 @@ const Project = ({
           {technologies.map((tech, i) => {
             return (
               <li key={i}>
-                <div className="flex items-center gap-1 rounded-md bg-[#ffffff] bg-opacity-5 px-2 py-1 text-secondary">
+                <div
+                  className="flex items-center gap-1 rounded-md px-2 py-1 text-secondary"
+                  style={{ background: `var(--bg-${tech})` }}
+                >
                   <Icon name={tech} width={15} height={15} />
-                  <span>{tech}</span>
+                  <span style={{ color: `var(--${tech})` }}>{tech}</span>
                 </div>
               </li>
             );
