@@ -43,7 +43,7 @@ export const projects: ProjectProps[] = [
       "Interact with other climbers, share the climbs you've completed, rate the climbs and create a better connection to the community we all know and love.",
   },
   {
-    src: "_brianschnee.jpg",
+    src: "brianschnee.jpg",
     site: "https://brianschnee.com/",
     repo: "https://github.com/brianschnee/portfolio-optimized",
     title: "brianschnee.com",
