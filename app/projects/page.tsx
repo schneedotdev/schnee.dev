@@ -16,7 +16,7 @@ const Project = ({
     <li className="flex flex-col rounded-md">
       <Image
         className="w-full rounded-t-md"
-        src={`/assets/_${src}`}
+        src={`/assets/${src}`}
         width={610}
         height={610}
         alt={`preview of pages from ${site} website`}
