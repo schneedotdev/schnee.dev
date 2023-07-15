@@ -34,8 +34,8 @@
   --bg-netlify: #0f766e26;
   --nextjs: theme(colors.zinc.300);
   --bg-nextjs: #3f3f4626;
-  --passport: theme(colors.lime.300);
-  --bg-passport: #4d7c0f26;
+  --passport: theme(colors.emerald.300);
+  --bg-passport: #6ee7b726;
   --node: theme(colors.green.300);
   --bg-node: #15803d26;
   --preact: theme(colors.purple.300);
