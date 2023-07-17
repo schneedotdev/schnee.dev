@@ -17,7 +17,8 @@ export type Technologies =
   | "nextjs"
   | "netlify"
   | "astro"
-  | "preact";
+  | "preact"
+  | "contentlayer";
 
 export type ProjectProps = {
   src: string;
@@ -34,7 +35,14 @@ export const projects: ProjectProps[] = [
     site: "https://schnee.dev/",
     title: "schnee.dev",
     repo: "https://github.com/brianschnee/schnee.dev",
-    technologies: ["nextjs", "typescript", "react", "mdx", "tailwind"],
+    technologies: [
+      "nextjs",
+      "typescript",
+      "react",
+      "contentlayer",
+      "mdx",
+      "tailwind",
+    ],
     description:
       "Schnee.dev is my meticulously crafted personal portfolio website, where performance and dynamic rendering of components take center stage. Developed using the state-of-the-art Next.js 13 App Router architecture, it harnesses the capabilities of React Server Components, file-based routing, and more, to elevate functionality, speed, and scalability. Leveraging contentlayer and MDX, the blog pages are dynamically generated from markdown and are provided their own dedicated routes, adding flexibility and seamless content management.",
   },
