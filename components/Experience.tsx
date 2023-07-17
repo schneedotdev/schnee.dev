@@ -10,15 +10,15 @@ type ExperienceProps = {
 const Experience = ({ startDate }: ExperienceProps) => {
   const [time, setTime] = useState({
     years: 5,
-    months: 5,
-    days: 29,
-    hours: 8,
-    minutes: 13,
-    seconds: 24,
+    months: 0,
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
   });
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    const calculateTimeDifference = () => {
       const currentDate = moment();
       const start = moment(startDate);
       const duration = moment.duration(currentDate.diff(start));
@@ -30,8 +30,15 @@ const Experience = ({ startDate }: ExperienceProps) => {
         minutes: duration.minutes(),
         seconds: duration.seconds(),
       });
-    }, 1000);
+    };
 
+    // Call the calculation logic immediately when the component mounts
+    calculateTimeDifference();
+
+    // Start the interval for subsequent updates
+    const intervalId = setInterval(calculateTimeDifference, 1000);
+
+    // Clean up the interval on component unmount
     return () => clearInterval(intervalId);
   }, [startDate]);
 
