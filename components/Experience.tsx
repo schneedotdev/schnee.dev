@@ -9,12 +9,12 @@ type ExperienceProps = {
 
 const Experience = ({ startDate }: ExperienceProps) => {
   const [time, setTime] = useState({
-    years: 0,
-    months: 0,
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    years: 5,
+    months: 5,
+    days: 29,
+    hours: 8,
+    minutes: 13,
+    seconds: 24,
   });
 
   useEffect(() => {
