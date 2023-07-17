@@ -23,7 +23,7 @@ const Project = ({
       />
       <section className="flex flex-col gap-3 rounded-b-md bg-[#f2f2f308] p-8">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl text-primary">{title}</h2>
+          <h2 className="text-xl text-primary">{title}</h2>
           <div className="flex items-center gap-2">
             <a href={repo}>
               <Icon
@@ -63,7 +63,7 @@ const Project = ({
           })}
         </ul>
         <hr className="border-tertiary opacity-40" />
-        <p className="leading-2text-tertiary">{description}</p>
+        <p className="leading-2 text-secondary">{description}</p>
       </section>
     </li>
   );
