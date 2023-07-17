@@ -76,23 +76,6 @@ export const projects: ProjectProps[] = [
       "Optimized version of Attri Enterprises Website. Decreased page load times by 60% on mobile and 71% on desktops through static-site generation (SSG), image optimization, minimizing the number and size of requests, asset bundling, partial rendering, and lazy hydration.",
   },
   {
-    src: "findadev.jpg",
-    site: "https://find-a-dev.up.railway.app/",
-    repo: "https://github.com/brianschnee/find-a-dev",
-    title: "find a dev",
-    technologies: [
-      "javascript",
-      "node",
-      "express",
-      "mongodb",
-      "ejs",
-      "css",
-      "railway",
-    ],
-    description:
-      "Find developers who are willing to offer time to tutor! Filter through a list of devs by technologiesnology.",
-  },
-  {
     src: "timeato.jpg",
     site: "https://timeato.up.railway.app/",
     repo: "https://github.com/devv-work/timeato",
@@ -109,5 +92,22 @@ export const projects: ProjectProps[] = [
     ],
     description:
       "Track productivity, allot time for focusing on tasks, and increase your effectiveness during study sessions ",
+  },
+  {
+    src: "findadev.jpg",
+    site: "https://find-a-dev.up.railway.app/",
+    repo: "https://github.com/brianschnee/find-a-dev",
+    title: "find a dev",
+    technologies: [
+      "javascript",
+      "node",
+      "express",
+      "mongodb",
+      "ejs",
+      "css",
+      "railway",
+    ],
+    description:
+      "Find developers who are willing to offer time to tutor! Filter through a list of devs by technologiesnology.",
   },
 ];
