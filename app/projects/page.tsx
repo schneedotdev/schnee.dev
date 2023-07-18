@@ -3,6 +3,7 @@ import Heading from "@/components/ui/Heading";
 import Summary from "@/components/Summary";
 import { type ProjectProps, projects } from "@/lib/projects";
 import Icon from "@/components/ui/Icon";
+import JumpToTop from "@/components/JumpToTop";
 
 const Project = ({
   src,
@@ -90,6 +91,7 @@ export default function ProjectPage() {
           );
         })}
       </ul>
+      <JumpToTop slug={"/projects"} />
     </>
   );
 }

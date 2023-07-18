@@ -126,3 +126,41 @@ pre > code {
   background: "none";
   border: none;
 }
+
+/* pop up */
+.popup {
+  display: none;
+  bottom: 5rem;
+  left: 90%;
+  background: hsl(240, 4%, 50%, 0.5);
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.popup.visible:hover {
+  background: hsl(240, 4%, 50%, 0.7);
+}
+
+.popup.visible:hover svg {
+  stroke: var(--primary);
+}
+
+.popup.visible {
+  display: block;
+  animation: popupFadeInOut 2s ease-in-out;
+}
+
+@keyframes popupFadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
