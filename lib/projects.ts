@@ -72,7 +72,7 @@ export const projects: ProjectProps[] = [
     title: "brianschnee.com",
     technologies: ["astro", "typescript", "preact", "css", "netlify"],
     description:
-      "Brianschnee.com served as the initial version of my personal portfolio, intended to attract an audience for freelance development. The application was meticulously crafted with a focus on optimal performance and captivating user interface. The website utilizes Static Generation, enabling instantaneous delivery of assets and seamless interactivity for end users.",
+      "Brianschnee.com served as the initial version of my personal portfolio, intended to attract an audience for freelance development. The application was crafted with a focus on optimal performance and captivating user interface. The website utilizes Static Generation, enabling instantaneous delivery of assets and interactivity for end users.",
   },
   {
     src: "attri.jpg",
@@ -81,7 +81,7 @@ export const projects: ProjectProps[] = [
     title: "attri enterprises",
     technologies: ["astro", "typescript", "preact", "css", "vercel"],
     description:
-      "Attrienterprises.com was a website I developed for a prominent company based in Brooklyn, New York. Taking charge of the entire design and development process, I later focused on improving web performance within the company. Through various code optimizations, including static-site generation (SSG), image optimization, reduction of requests and file sizes, asset bundling, partial rendering, and lazy hydration, I successfully achieved a remarkable 60% decrease in mobile page load times and a significant 71% decrease in desktop page load times.",
+      "Attrienterprises.com was a website I developed for a prominent company based in Brooklyn, New York. Taking charge of the entire design and development process, I later focused on improving web performance within the company. Through various code optimizations, including static-site generation (SSG), image optimization, reduction of requests and file sizes, asset bundling, partial rendering, and lazy hydration, I successfully achieved a 60% decrease in mobile page load times and a 71% decrease in desktop page load times.",
   },
   {
     src: "timeato.jpg",
