@@ -22,6 +22,7 @@ import Preact from "@/icons/preact.svg";
 import Github from "@/icons/github.svg";
 import ExternalLink from "@/icons/external-link.svg";
 import Contentlayer from "@/icons/contentlayer.svg";
+import UpArrow from "@/icons/uparrow.svg";
 
 export type TailwindClass<P extends string> = `${P}-${string}`;
 type TailwindHover<P extends string> = `hover:${TailwindClass<P>}`;
@@ -42,7 +43,8 @@ type MiscIcons =
   | "linkedin"
   | "blogs"
   | "projects"
-  | "external-link";
+  | "external-link"
+  | "uparrow";
 
 type IconProps = { name: Technologies | MiscIcons } & SVGProps;
 
@@ -200,6 +202,12 @@ export const icons: Record<
   ),
   "external-link": (props) => (
     <ExternalLink
+      className={cn(props.hover, props.stroke, props.fill, props.className)}
+      {...props}
+    />
+  ),
+  uparrow: (props) => (
+    <UpArrow
       className={cn(props.hover, props.stroke, props.fill, props.className)}
       {...props}
     />
