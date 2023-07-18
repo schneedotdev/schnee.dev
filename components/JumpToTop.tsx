@@ -27,6 +27,7 @@ const JumpToTop = ({ slug }: { slug: string }) => {
       className={`popup fixed rounded p-4 shadow-md ${
         isVisible ? "visible" : ""
       }`}
+      aria-label="scroll to the top of the page"
     >
       <Icon name="uparrow" />
     </a>
