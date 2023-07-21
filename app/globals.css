@@ -164,3 +164,11 @@ pre > code {
     opacity: 0;
   }
 }
+
+.autolink-svg {
+  display: inline-block;
+}
+
+.autolink-svg:hover {
+  fill: #0c885f;
+}

@@ -5,10 +5,34 @@ import { cn } from "@/lib/utils";
 
 const components = {
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadElement>) => (
-    <h2 className={cn("text-xl", className)} {...props} />
+    <h2
+      className={cn("flex items-center gap-2 text-xl", className)}
+      {...props}
+    />
   ),
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadElement>) => (
-    <h3 className={cn("text-lg", className)} {...props} />
+    <h3
+      className={cn("flex items-center gap-2 text-lg ", className)}
+      {...props}
+    />
+  ),
+  h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadElement>) => (
+    <h4
+      className={cn("flex items-center gap-2 text-base ", className)}
+      {...props}
+    />
+  ),
+  h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadElement>) => (
+    <h5
+      className={cn("flex items-center gap-2 text-base ", className)}
+      {...props}
+    />
+  ),
+  h6: ({ className, ...props }: React.HTMLAttributes<HTMLHeadElement>) => (
+    <h6
+      className={cn("flex items-center gap-2 text-base ", className)}
+      {...props}
+    />
   ),
   a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
