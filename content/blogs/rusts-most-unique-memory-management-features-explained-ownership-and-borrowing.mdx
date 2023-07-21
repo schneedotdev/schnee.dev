@@ -14,7 +14,7 @@ Before jumping into what makes Rust's memory management system unique, we must d
 6. [Rules of Ownership](#rules-of-ownership)
 7. [Conclusion](#conclusion)
 
-<h2 id="what-is-memory">What is Memory?</h2>
+## What is Memory?
 
 Memory is comprised of `addresses` and `values`.
 
@@ -24,7 +24,7 @@ A `value` is the data stored at a location on your computer.
 
 Working with memory can be dangerous, so before you start accessing random memory addresses on your computer, let's talk about those dangers and how Rust tries to mitigate them.
 
-<h2 id="what-is-memory-safety">What is Memory Safety?</h2>
+## What is Memory Safety?
 
 Working with memory is a core aspect of computing, allowing us to perform a series of tasks we refer to as our program. However, working with memory introduces a variety of pitfalls that modern languages like Rust intend to protect us from.
 
@@ -40,7 +40,7 @@ Now, let's _Segway_ into Rust's solution...
 
 ---
 
-<h2 id="what-is-ownership">What is Ownership?</h2>
+## What is Ownership?
 
 In Rust, `ownership` is used to manage memory safely. An `owner` is a piece of code, object, or variable with complete control over the data it holds. When a variable is declared, a memory address is given to that variable. It is considered the owner of that address until it is no longer needed or ownership is transferred. This means that at some point in our program, Rust will free the memory we were using without needing to deallocate like we may have to in other languages manually. In Rust, transferring ownership is called a `move`. When ownership of a value is moved, we can no longer access the value from the first memory address.
 
@@ -58,7 +58,8 @@ Before jumping into the ownership rules, let's define a few more terms.
 
 ---
 
-<h2 id="what-is-borrowing">What is Borrowing?</h2>
+
+## What is Borrowing?
 
 If a value can only have one owner, we need a way to allow other pieces of code to access the data stored in memory addresses without taking ownership. We refer to this as `borrowing`. Borrowing enables us to create a reference to another piece of data without taking responsibility for the memory. A `reference` in Rust, written with the `&` symbol, refers to a memory address that holds a value. Borrowing also ensures that you are operating on non-null, valid memory addresses.
 
@@ -112,7 +113,7 @@ We can decide to move ownership into a function and later return and retake owne
 
 ---
 
-<h2 id="mutable-vs-immutable-values">Mutable vs. Immutable values</h2>
+## Mutable vs. Immutable values
 
 An `immutable` value is a value that cannot change (read-only). By default, variables in Rust are immutable.
 
@@ -154,7 +155,7 @@ Since a mutable reference to `x` passes to the variable `y`, when `y` mutates, `
 
 ---
 
-<h2 id="rules-of-ownership">Rules of Ownership</h2>
+## Rules of Ownership
 
 Rust has a few rules for ownership that allow us to compile. By abiding by the following limitations, you'll be sure to have a great relationship with your compiler:
 
@@ -232,7 +233,7 @@ fn main() {
 
 ---
 
-<h2 id="conclusion">Conclusion</h2>
+## Conclusion
 
 ![Looney toons that's all folks text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tif899mew5qoogsfex4u.jpg)
 

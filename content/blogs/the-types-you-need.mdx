@@ -38,7 +38,7 @@ While introducing types, we will see a structure on hover that resembles: let st
 17. [custom types](#custom-types)
 18. [intersections](#intersections)
 
-<h3 id="number">number</h3>
+### number
 
 The `number` type represents any number in JavaScript, including negative numbers, NaN, and Infinity.
 
@@ -46,7 +46,7 @@ The `number` type represents any number in JavaScript, including negative number
 
 [Number Code Example](https://www.typescriptlang.org/play?#code/DYUwLgBAdgrgthAvBAjABgNwChYOQJkyA)
 
-<h3 id="string">string</h3>
+### string
 
 The `string` type represents any collection of characters and can be declared with either single or double quotes.
 
@@ -54,7 +54,7 @@ The `string` type represents any collection of characters and can be declared wi
 
 [String Code Example](https://www.typescriptlang.org/play?#code/DYUwLgBAzmBOEF4ICIAWJjAPbINwCgZ4kByAdy1mABMTcg)
 
-<h3 id="boolean">boolean</h3>
+### boolean
 
 The `boolean` type refers to true or false.
 
@@ -62,7 +62,7 @@ The `boolean` type refers to true or false.
 
 [Boolean Code Example](https://www.typescriptlang.org/play?#code/DYUwLgBARg9jwQLwTAJwK4gNwChbyQgDMBDYAZ2yA)
 
-<h3 id="any">any</h3>
+### any
 
 The `any` type typically occurs when a value or variable type cannot be inferred, meaning that the type can be "any" type. When writing code, we usually want to be in an any-less environment. Any doesn't provide type-safety, meaning we operate in JavaScript land.
 
@@ -70,7 +70,7 @@ The `any` type typically occurs when a value or variable type cannot be inferred
 
 [Any Type Code Example](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABAEzgUwM4GU4Fs1QAWMYA5gBQBuAhgDYhoBci1YAngJSIDeAUIoggIMcWmgB0tOBRr00HXgF8gA)
 
-<h3 id="unknown">unknown</h3>
+### unknown
 
 The `unknown` type is a safer, more descriptive way to define when you don’t know the type of value. It's a great choice instead of using `any` in specific scenarios. It's safer because TypeScript will force us to perform a runtime check or type assertion before the value can be used. Although this seems annoying, it allows us to maintain type safety. A typical use case of unknown could be typing the return of an API call.
 
@@ -78,7 +78,7 @@ The `unknown` type is a safer, more descriptive way to define when you don’t k
 
 [Unknown Code Example](https://www.typescriptlang.org/play?#code/MYewdgzgLgBATgUwgB3BBAuGBXMBrMEAdzBgF4YAzBKYACwAoByOqKZCDAei4QA8AhgFtkAGwQA6UEK4BGJgEoA3EA)
 
-<h3 id="const">const</h3>
+### const
 
 When we declare a variable with the `const` keyword, the value is considered `Readonly`, meaning the value can never be mutated. In TypeScript, this changes the type of a value from its `primitive type` to what’s referred to as a `literal type`, which means that the type of a value is just that value.
 
@@ -88,7 +88,7 @@ _Note that const only has the `literal type` effect for JavaScript primitives (n
 
 [Const Code Example](https://www.typescriptlang.org/play?#code/MYewdgzgLgBNBOMC8MBEB3AFgQ1gExBgE8QBXGAWwFNswYBJAcgpmxgBsBLKK+bdmFCIAHKqiA)
 
-<h3 id="unions">unions</h3>
+### unions
 
 The `|` operator specifies a `union` of types. A union allows a variable to hold values of different types. _It's possible to chain together unions of types by using multiple unions in succession._
 
@@ -96,7 +96,7 @@ The `|` operator specifies a `union` of types. A union allows a variable to hold
 
 [Union Code Example](https://www.typescriptlang.org/play?#code/DYUwLgBAbghsCuIBcEB28C2AjEAnCAPhAM5i4CWqA5gNwBQsCIEAvBAIwAM9jirEAIjAhUAmkA)
 
-<h3 id="undefined">undefined</h3>
+### undefined
 
 The `undefined` type occurs when we explicitly define the behavior. We can type something as undefined, but a more common use case happens when we use the optional syntax `?` for function parameters or properties of an object type. Defining an optional type will create a union of the specified type and undefined.
 
@@ -104,7 +104,7 @@ The `undefined` type occurs when we explicitly define the behavior. We can type 
 
 [Undefined Code Example](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABABwE4zFAcgQwLYCmAFMDKgM5QBcil6YA5gDSIA2OlA-DXRgwJSIA3gChEiEQF8gA)
 
-<h3 id="null">null</h3>
+### null
 
 The `null` type can be used in a few different places, but it's most commonly used in a union as the return type of a function or to store a variable’s default value that may change later.
 
@@ -112,7 +112,7 @@ The `null` type can be used in a few different places, but it's most commonly us
 
 [Null Code Example](https://www.typescriptlang.org/play?#code/DYUwLgBAbghsCuIBcEDOYBOBLAdgcwgB8Id5hgIBeEs4AbgCgGsAzACk0QEoIBvBiNDiIqEAEQALEOQD2YhgF8gA)
 
-<h3 id="arrays">arrays</h3>
+### arrays
 
 The `array` type houses a list of elements of a specific type. Remember that union types are types themselves, which means that if you specify an array of union types, the array can hold multiple kinds of elements.
 
@@ -122,7 +122,7 @@ Two different kinds of syntax can be used to define an array type. The first way
 
 [Array Code Example](https://www.typescriptlang.org/play?#code/MYewdgzgLgBAhgJwTAvDA2gIigCwJZgDmmANDAIwC6A3EA)
 
-<h3 id="objects">objects</h3>
+### objects
 
 The `object` type is a collection of types. Unlike unions, object types are precise declarations and require using the property keys you define and the correct type of values they store. Object types can house as many properties and different kinds of types as you would like, including other object types. You can create an object type by using curly braces `{}` and adding a property name and the type of the value in the structure of a regular JavaScript object.
 
@@ -130,7 +130,7 @@ The `object` type is a collection of types. Unlike unions, object types are prec
 
 [Object Code Example](https://www.typescriptlang.org/play?#code/MYewdgzgLgBADgUwE4XALhgbxgMwJYpQByAhgLYIbRJ5gDmANDADYnSkVVQ30wC+MALxYAUDFwF25SjABEAIRAAjWQzEs2xaRlkBhEABNkskXyA)
 
-<h3 id="parameters">parameters</h3>
+### parameters
 
 As seen before, you will want to type the parameters in a function. This is super helpful for self-documenting and minimally validating the inputs of a function.
 
@@ -138,7 +138,7 @@ As seen before, you will want to type the parameters in a function. This is supe
 
 [Parameter Code Example](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABAWxAG1gBzQTwBQCGAXImCMgEYCmATgDSIUlmW0CUiA3gFCKI1UoIGkgKIAVIwDc3AL5A)
 
-<h3 id="return-types">return types</h3>
+### return types
 
 Return types can be automatically inferred in typescript. If you take the example from the parameters section, TypeScript already knows the return value will be a number. Let’s switch up the type of one of the variables and add an explicit return type to state our intentions.
 
@@ -148,7 +148,7 @@ Return types can be automatically inferred in typescript. If you take the exampl
 
 _Note that we had to convert `b` from a `string` to a `number`; otherwise, TypeScript would tell us something is wrong._
 
-<h3 id="void">void</h3>
+### void
 
 A function that does not return a value is said to return `void`. This is automatically inferred if a function does not include the `return` keyword. However, typing the return can give us type safety within the function, ensuring we aren't unintentionally returning.
 
@@ -156,7 +156,7 @@ A function that does not return a value is said to return `void`. This is automa
 
 [Void Code Example](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABABwE4zFAyiAtgCgEMAuRMPAIwFNUAaRC083a1ASlIDc4YATRAN4AoRIggIAznAA2VAHTS4AcyKIA1AzYBuIQF8gA)
 
-<h3 id="methods">methods</h3>
+### methods
 
 Creating `method` types can define the shape of a function's inputs and return. In the example below, we construct a type for a method belonging to an object.
 
@@ -164,7 +164,7 @@ Creating `method` types can define the shape of a function's inputs and return. 
 
 [Method Code Example](https://www.typescriptlang.org/play?#code/MYewdgzgLgBMCGUBcMDeAoGMzwLYFMVoAnASzAHMAaTGCAB33gGsUAKCEAVzABMioZSgEoYAXgB8MAG4hSvdAF9xaWjgIoA5ABVSuTTSwMmrGB259RkuOE4AbfADo7ICuZ69hS9OgRRHxixsmgQgAO6awgDcQA)
 
-<h3 id="generics">generics</h3>
+### generics
 
 In TypeScript, generics are a way to parameterize types and functions to work with any type instead of a specific one. It's a way to define the structure of a type while being agnostic to the underlying operations of that structure. Generics are commonly seen throughout usage with external JavaScript libraries, and they are powerful but tricky to understand and read errors from.
 
@@ -176,7 +176,7 @@ _To learn how to construct generic types, visit [Generics](https://www.typescrip
 
 [Generics Code Example](https://www.typescriptlang.org/play?#code/MYewdgzgLgBNBOBLMBzCAuGBBe8CGAngDwLIoB8MAvDANoBEpq9ANDPQKYA2HAth2CgR6AXQDcQA)
 
-<h3 id="custom-types">custom types</h3>
+### custom types
 
 Creating your own types is valuable when you want to add semantic meaning to a type, decrease the size of a type declaration, and export a type to be used throughout your application. Custom types typically follow the Pascal Case naming convention where the first letter of every word is capitalized, including the very first word, "MyCustomType."
 
@@ -204,7 +204,7 @@ Here is an example of an interface using the extends keyword.
 
 _When creating any object-related type, you can separate key-value pairs with commas, semi-colons, or nothing, as long as they sit on their own lines._
 
-<h3 id="intersections">intersections</h3>
+### intersections
 
 An `intersection` defines a combination of multiple types. Unlike a union, where we specify a type as one type or another, an intersection will combine the properties of various object types into a brand-new type. Meaning you must satisfy the behavior of both types combined.
 
@@ -212,7 +212,7 @@ An `intersection` defines a combination of multiple types. Unlike a union, where
 
 [Intersection Code Example](https://www.typescriptlang.org/play?#code/C4TwDgpgBAqgzhATlAvFA3lAdgQwLYQBcUcwiAllgOYA0U5AJsaRdVAL4DcAUKJFACUA9gBtoaTIlFEoAcgCCDPJVlQAPnPhJVXXuGhbEAdXLAAFsLGpYCZADJB0ntwDGQrKSgBXW8UMnzS3EMbihsfBlZACEKHCxZGlD6JjkcAGYRAGsAKzgGAA4AFiwChKSpMWJZQ1ludiA)
 
-<h3 id="conclusion">Conclusion</h3>
+### Conclusion
 
 !["Fin", end of article](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tmuleo5konfj3s6dwrow.jpg)
 
