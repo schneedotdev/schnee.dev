@@ -147,32 +147,20 @@ pre > code {
   cursor: pointer;
 }
 
-.popup.visible:hover {
-  background: hsl(240, 4%, 50%, 0.7);
-}
-
-.popup.visible:hover svg {
-  stroke: var(--primary);
-}
-
 .popup.visible {
+  /* Styles when the icon is visible */
   display: block;
   animation: popupFadeInOut 2s ease-in-out;
 }
 
-@keyframes popupFadeInOut {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+.popup:hover {
+  /* Styles when the icon is being hovered */
+  background: hsl(240, 4%, 50%, 0.7);
+}
+
+.popup.visible:hover svg {
+  /* Icon styles when the icon is being hovered and visible */
+  stroke: var(--primary);
 }
 
 .autolink-svg {
