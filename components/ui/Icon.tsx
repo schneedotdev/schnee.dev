@@ -176,30 +176,6 @@ export const icons: Record<
       {...props}
     />
   ),
-  linkedin: (props) => (
-    <Preact
-      className={cn(props.hover, props.stroke, props.fill, props.className)}
-      {...props}
-    />
-  ),
-  twitter: (props) => (
-    <Preact
-      className={cn(props.hover, props.stroke, props.fill, props.className)}
-      {...props}
-    />
-  ),
-  blogs: (props) => (
-    <Preact
-      className={cn(props.hover, props.stroke, props.fill, props.className)}
-      {...props}
-    />
-  ),
-  projects: (props) => (
-    <Preact
-      className={cn(props.hover, props.stroke, props.fill, props.className)}
-      {...props}
-    />
-  ),
   "external-link": (props) => (
     <ExternalLink
       className={cn(props.hover, props.stroke, props.fill, props.className)}
@@ -212,6 +188,13 @@ export const icons: Record<
       {...props}
     />
   ),
+  linkedin: (props) => <></>,
+  twitter: (props) => <></>,
+  blogs: (props) => <></>,
+  projects: (props) => <></>,
+  jwt: (props) => <></>,
+  postgresql: (props) => <></>,
+  prisma: (props) => <></>,
 };
 
 export default Icon;
