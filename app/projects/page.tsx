@@ -14,7 +14,7 @@ const Project = ({
   technologies,
 }: ProjectProps) => {
   return (
-    <li className="flex flex-col rounded-md">
+    <li id={title} className="flex flex-col rounded-md">
       <Image
         className="w-full rounded-t-md"
         src={`/assets/${src}`}
@@ -78,7 +78,7 @@ export default function ProjectPage() {
       <hr className="mt-10 border-tertiary" />
       <ul className="mt-10 flex flex-col gap-12">
         {projects
-          .filter((project) => project.src !== "backend only")
+          // .filter((project) => project.src !== "backend only")
           .map((props: ProjectProps) => {
             return (
               <Project

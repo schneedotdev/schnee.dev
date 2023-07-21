@@ -12,7 +12,7 @@ const Project = ({ link, title, tech, year }: ProjectProps) => {
   return (
     <a
       className="outside-padding group flex h-full flex-col justify-between gap-3"
-      href={link}
+      href={`/projects#${link}`}
     >
       <div className="flex items-center gap-2">
         <h3>{title}</h3>
@@ -45,7 +45,7 @@ const Projects = () => {
           <Project
             key={project.title}
             title={project.title}
-            link={project.repo}
+            link={project.title}
             tech={project.technologies}
             year={project.year || "'23"}
           />
