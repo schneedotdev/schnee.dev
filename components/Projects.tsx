@@ -1,3 +1,4 @@
+import { projects } from "@/lib/projects";
 import Link from "next/link";
 
 type ProjectProps = {
@@ -40,70 +41,15 @@ const Projects = () => {
       </h2>
 
       <section className="mt-10 flex flex-col gap-7">
-        <Project
-          title="Climbers Connect"
-          link="https://github.com/brianschnee/climbers-connect"
-          year="'23"
-          tech={[
-            "typescript",
-            "node",
-            "express",
-            "ejs",
-            "css",
-            "mongodb",
-            "mongoose",
-            "cloudinary",
-            "passportjs",
-          ]}
-        />
-        <Project
-          title="Attri Enterprises"
-          link="https://github.com/brianschnee/attrienterprises-optimized"
-          year="'23"
-          tech={["typescript", "preact", "astrobuild", "css", "vercel"]}
-        />
-        <Project
-          title="changelog"
-          link="https://github.com/brianschnee/changelog"
-          year="'22"
-          tech={[
-            "typescript",
-            "node",
-            "express",
-            "prisma",
-            "postgresql",
-            "jwt",
-          ]}
-        />
-        <Project
-          title="Timeato"
-          link="https://github.com/devv-work/timeato"
-          year="'22"
-          tech={[
-            "javascript",
-            "node",
-            "express",
-            "ejs",
-            "css",
-            "mongodb",
-            "mongoose",
-            "passportjs",
-          ]}
-        />
-        <Project
-          title="Find a dev"
-          link="https://github.com/brianschnee/find-a-dev"
-          year="'22"
-          tech={[
-            "javascript",
-            "node",
-            "express",
-            "ejs",
-            "css",
-            "mongodb",
-            "mongoose",
-          ]}
-        />
+        {projects.map((project) => (
+          <Project
+            key={project.title}
+            title={project.title}
+            link={project.repo}
+            tech={project.technologies}
+            year={project.year || "'23"}
+          />
+        ))}
       </section>
     </div>
   );

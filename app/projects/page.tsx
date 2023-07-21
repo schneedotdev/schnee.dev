@@ -77,19 +77,21 @@ export default function ProjectPage() {
       <Summary content="As a Full Stack Software Engineer, I'm confident with an array of tools and technologies. I get a kick out of transforming ideas into code. Check out my work and play around with the projects!" />
       <hr className="mt-10 border-tertiary" />
       <ul className="mt-10 flex flex-col gap-12">
-        {projects.map((props: ProjectProps) => {
-          return (
-            <Project
-              key={props.title}
-              src={props.src}
-              site={props.site}
-              repo={props.repo}
-              title={props.title}
-              technologies={props.technologies}
-              description={props.description}
-            />
-          );
-        })}
+        {projects
+          .filter((project) => project.src !== "backend only")
+          .map((props: ProjectProps) => {
+            return (
+              <Project
+                key={props.title}
+                src={props.src}
+                site={props.site}
+                repo={props.repo}
+                title={props.title}
+                technologies={props.technologies}
+                description={props.description}
+              />
+            );
+          })}
       </ul>
       <JumpToTop slug={"/projects"} />
     </>
