@@ -96,7 +96,7 @@ _While reading through this section, I encourage you to click on the example cod
 
 ![Example of the Error Message: Type 'x' is not assignable to type 'y'](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jg0v2epfrzifae48rts0.png)
 
-[Example of the Error](https://www.typescriptlang.org/play?#code/DYUwLgBAzmBOBc04EsB2BzCBeCAiAFsrgNwBQMs2EcAriMUA)
+[Example of the Error Message: Type 'x' is not assignable to type 'y'](https://www.typescriptlang.org/play?#code/DYUwLgBAzmBOBc04EsB2BzCBeCAiAFsrgNwBQMs2EcAriMUA)
 
 _Solution: Change your code to follow or redefine the type contract._
 
@@ -106,7 +106,7 @@ _Solution: Change your code to follow or redefine the type contract._
 
 ![Example of the Error Message: Property 'x' does not exist on type 'y'](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fot8qesku85a9x2foixo.png)
 
-[Example of the Error](https://www.typescriptlang.org/play?#code/MYewdgzgLgBADgUwE4XALhgbxmAhgWwQ2iQEswBzGAXxgF4sAoGHAomAIgCtcwEPGtRo0QpwAOlwUEQA)
+[Example of the Error Message: Property 'x' does not exist on type 'y'](https://www.typescriptlang.org/play?#code/MYewdgzgLgBADgUwE4XALhgbxmAhgWwQ2iQEswBzGAXxgF4sAoGHAomAIgCtcwEPGtRo0QpwAOlwUEQA)
 
 _Solution: The error message will include the shape of the object you are trying to access a property from. Read the definition and make sure to use properties that exist within the type._
 
@@ -118,7 +118,7 @@ _Tip: When you type '.' on an object, TypeScript will show you the methods and p
 
 ![Example of the Error Message: Cannot find name 'x'](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sbaely2ydpj5mrbaxtsf.png)
 
-[Example of the Error](https://www.typescriptlang.org/play?#code/MYewdgziA2CmB00QHMAUAHWAnKYCUA3EA)
+[Example of the Error Message: Cannot find name 'x'](https://www.typescriptlang.org/play?#code/MYewdgziA2CmB00QHMAUAHWAnKYCUA3EA)
 
 _Solution: Define the variable you are trying to use, consider the scope, and check your spelling._
 
@@ -128,7 +128,7 @@ _Solution: Define the variable you are trying to use, consider the scope, and ch
 
 ![Example of the Error Message: Parameter 'x' implicitly has an 'any' type](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dojvzy90o0i752ja5wa6.png)
 
-[Example of the Error](https://www.typescriptlang.org/play?ssl=3&ssc=2&pln=1&pc=1#code/GYVwdgxgLglg9mABABwE4zFAFANwIYA2IApgJSIDeAUIohAgM5wHEB0BcA5roSaQNxUAvkA)
+[Example of the Error Message: Parameter 'x' implicitly has an 'any' type](https://www.typescriptlang.org/play?ssl=3&ssc=2&pln=1&pc=1#code/GYVwdgxgLglg9mABABwE4zFAFANwIYA2IApgJSIDeAUIohAgM5wHEB0BcA5roSaQNxUAvkA)
 
 _Solution: TypeScript would like to know more about the usage of your variable. In this case, create a type based on what behavior you want. You can type an element explicitly as 'any’, but it is generally unadvised for most cases._
 
@@ -138,7 +138,7 @@ _Solution: TypeScript would like to know more about the usage of your variable. 
 
 ![Example of the Error Message: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/41ppb8fveewzh40eq3rt.png)
 
-[Example of the Error](https://www.typescriptlang.org/play?#code/MYewdgzgLgBNBOMC8MBECCWYDmqDcAUKJLGAK4C2yMArEeNDAG4CGANmQKbUIwBUMchTxA)
+[Example of the Error Message: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type](https://www.typescriptlang.org/play?#code/MYewdgzgLgBNBOMC8MBECCWYDmqDcAUKJLGAK4C2yMArEeNDAG4CGANmQKbUIwBUMchTxA)
 
 _Solution: Verify that you are performing proper operations for each type. In certain cases, you can cast a value to the right type._
 
@@ -148,7 +148,7 @@ _Solution: Verify that you are performing proper operations for each type. In ce
 
 ![Example of the Error Message: Object is possibly 'null' or 'undefined'](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iwyom3smw51b1xx5j6fi.png)
 
-[Example of the Error](https://www.typescriptlang.org/play?#code/MYewdgzgLgBAFiARoglgUwjAvDAFGAQwFs0AuGaAJxTAHMAaeJVDAfnKptoG0BdASmwA+GAG8AUDBihIIADZoAdHJC1cAAwAkowiQC+8Apm0Jk6CMrR0ocA6ZYX1-cXqA)
+[Example of the Error Message: Object is possibly 'null' or 'undefined'](https://www.typescriptlang.org/play?#code/MYewdgzgLgBAFiARoglgUwjAvDAFGAQwFs0AuGaAJxTAHMAaeJVDAfnKptoG0BdASmwA+GAG8AUDBihIIADZoAdHJC1cAAwAkowiQC+8Apm0Jk6CMrR0ocA6ZYX1-cXqA)
 
 _Solution: Add type checking before you use properties on a potentially null or undefined object through conditionals._
 
