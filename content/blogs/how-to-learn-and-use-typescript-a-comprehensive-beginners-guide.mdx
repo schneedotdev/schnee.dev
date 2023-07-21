@@ -228,7 +228,7 @@ _Note: There are many different ways to run TypeScript; what you choose will pri
 
 The easiest way to execute your code is by running the `node` command followed by the root file of your project. This command will both transpile and execute your code.
 
-```
+```bash
 node src/index.ts
 ```
 
@@ -248,7 +248,7 @@ npm i -D ts-node-dev
 
 Add the following to your `package.json` scripts. _The `--respawn` flag will re-transpile and execute your project on save._
 
-```
+```json
 // pacakage.json
 "scripts": {
    "dev": "ts-node-dev --respawn src/index.ts"
