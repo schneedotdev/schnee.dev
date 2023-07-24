@@ -38,7 +38,7 @@ export const projects: ProjectProps[] = [
     src: "schneedotdev.jpg",
     site: "https://schnee.dev/",
     title: "schnee.dev",
-    repo: "https://github.com/brianschnee/schnee.dev",
+    repo: "https://github.com/schneedotdev/schnee.dev",
     technologies: [
       "nextjs",
       "typescript",
@@ -52,9 +52,19 @@ export const projects: ProjectProps[] = [
     year: "'23",
   },
   {
+    src: "attri.jpg",
+    site: "https://attrienterprises.vercel.app/",
+    repo: "https://github.com/schneedotdev/attrienterprises-optimized",
+    title: "attri enterprises",
+    technologies: ["astro", "typescript", "preact", "css", "vercel"],
+    description:
+      "Attrienterprises.com was a website I developed for a prominent company based in Brooklyn, New York. Taking charge of the entire design and development process, I later focused on improving web performance within the company. Through various code optimizations, including static-site generation (SSG), image optimization, reduction of requests and file sizes, asset bundling, partial rendering, and lazy hydration, I successfully achieved a 60% decrease in mobile page load times and a 71% decrease in desktop page load times.",
+    year: "'23",
+  },
+  {
     src: "climbers.jpg",
     site: "https://climbersconnect.up.railway.app/",
-    repo: "https://github.com/brianschnee/climbers-connect",
+    repo: "https://github.com/schneedotdev/climbers-connect",
     title: "climbers connect",
     technologies: [
       "typescript",
@@ -72,19 +82,9 @@ export const projects: ProjectProps[] = [
     year: "'23",
   },
   {
-    src: "attri.jpg",
-    site: "https://attrienterprises.vercel.app/",
-    repo: "https://github.com/brianschnee/attrienterprises-optimized",
-    title: "attri enterprises",
-    technologies: ["astro", "typescript", "preact", "css", "vercel"],
-    description:
-      "Attrienterprises.com was a website I developed for a prominent company based in Brooklyn, New York. Taking charge of the entire design and development process, I later focused on improving web performance within the company. Through various code optimizations, including static-site generation (SSG), image optimization, reduction of requests and file sizes, asset bundling, partial rendering, and lazy hydration, I successfully achieved a 60% decrease in mobile page load times and a 71% decrease in desktop page load times.",
-    year: "'23",
-  },
-  {
     src: "brianschnee.jpg",
     site: "https://brianschnee.com/",
-    repo: "https://github.com/brianschnee/portfolio-optimized",
+    repo: "https://github.com/schneedotdev/portfolio-optimized",
     title: "brianschnee.com",
     technologies: ["astro", "typescript", "preact", "css", "netlify"],
     description:
@@ -94,7 +94,7 @@ export const projects: ProjectProps[] = [
   // {
   //   src: "backend only",
   //   site: "backend only",
-  //   repo: "https://github.com/brianschnee/changelog",
+  //   repo: "https://github.com/schneedotdev/changelog",
   //   title: "changelog",
   //   technologies: [
   //     "typescript",
@@ -129,7 +129,7 @@ export const projects: ProjectProps[] = [
   {
     src: "findadev.jpg",
     site: "https://find-a-dev.up.railway.app/",
-    repo: "https://github.com/brianschnee/find-a-dev",
+    repo: "https://github.com/schneedotdev/find-a-dev",
     title: "find a dev",
     technologies: [
       "javascript",
