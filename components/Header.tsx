@@ -87,7 +87,7 @@ const Header = () => {
           <li className="z-10 h-4 w-[1px] bg-tertiary"></li>
           <li className="outside-padding group hover:cursor-pointer">
             <a
-              href="https://www.github.com/brianschnee"
+              href="https://www.github.com/schneedotdev"
               target="_blank"
               title="github"
             >
@@ -110,7 +110,7 @@ const Header = () => {
           </li>
           <li className="outside-padding group hover:cursor-pointer">
             <a
-              href="https://www.linkedin.com/in/brian-schnee-dev"
+              href="https://www.linkedin.com/in/schneedotdev"
               target="_blank"
               title="linkedin"
             >
@@ -134,7 +134,7 @@ const Header = () => {
           </li>
           <li className="outside-padding group hover:cursor-pointer">
             <a
-              href="https://www.twitter.com/fullstackbrian"
+              href="https://www.twitter.com/schneedotdev"
               target="_blank"
               title="twitter"
             >
