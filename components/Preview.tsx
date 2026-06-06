@@ -1,10 +1,9 @@
 import Link from "next/link";
 import Blog from "./Blog";
-import { allPosts } from "@/.contentlayer/generated";
-import { sortByDate } from "@/lib/utils";
+import { getAllPosts } from "@/lib/posts";
 
 const Preview = async () => {
-  const blogs = sortByDate(await allPosts.slice(0, 3));
+  const blogs = getAllPosts().slice(0, 3);
 
   return (
     <div className="mt-20 w-full">

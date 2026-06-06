@@ -21,7 +21,6 @@ import Astro from "@/icons/astro.svg";
 import Preact from "@/icons/preact.svg";
 import Github from "@/icons/github.svg";
 import ExternalLink from "@/icons/external-link.svg";
-import Contentlayer from "@/icons/contentlayer.svg";
 import UpArrow from "@/icons/uparrow.svg";
 
 export type TailwindClass<P extends string> = `${P}-${string}`;
@@ -54,7 +53,7 @@ const Icon = (props: IconProps) => {
 
 export const icons: Record<
   Technologies | MiscIcons,
-  (props: IconProps) => JSX.Element
+  (props: IconProps) => React.ReactElement
 > = {
   react: (props) => (
     <React
@@ -160,12 +159,6 @@ export const icons: Record<
   ),
   preact: (props) => (
     <Preact
-      className={cn(props.hover, props.stroke, props.fill, props.className)}
-      {...props}
-    />
-  ),
-  contentlayer: (props) => (
-    <Contentlayer
       className={cn(props.hover, props.stroke, props.fill, props.className)}
       {...props}
     />
