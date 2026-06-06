@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-background-opaque: var(--background-opaque);
+  --color-background: var(--background);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-accent: var(--accent);
+}
 
 :root {
   /* Theme */
@@ -12,43 +21,43 @@
   --accent: hsl(160, 84%, 39%);
 
   /* Technologies */
-  --astro: theme(colors.orange.300);
+  --astro: #fdba74;
   --bg-astro: #c2410c26;
-  --cloudinary: theme(colors.indigo.300);
+  --cloudinary: #a5b4fc;
   --bg-cloudinary: #4338ca26;
-  --css: theme(colors.cyan.300);
+  --css: #67e8f9;
   --bg-css: #0e749026;
-  --ejs: theme(colors.lime.300);
+  --ejs: #bef264;
   --bg-ejs: #4d7c0f26;
-  --express: theme(colors.slate.300);
+  --express: #cbd5e1;
   --bg-express: #33415526;
-  --javascript: theme(colors.yellow.300);
+  --javascript: #fde047;
   --bg-javascript: #a1620726;
-  --mdx: theme(colors.amber.300);
+  --mdx: #fcd34d;
   --bg-mdx: #fcd34d26;
-  --mongodb: theme(colors.green.300);
+  --mongodb: #86efac;
   --bg-mongodb: #15803d26;
-  --mongoose: theme(colors.red.300);
+  --mongoose: #fca5a5;
   --bg-mongoose: #b91c1c26;
-  --netlify: theme(colors.teal.300);
+  --netlify: #5eead4;
   --bg-netlify: #0f766e26;
-  --nextjs: theme(colors.neutral.300);
+  --nextjs: #d4d4d4;
   --bg-nextjs: #a3a3a326;
-  --passport: theme(colors.emerald.300);
+  --passport: #6ee7b7;
   --bg-passport: #6ee7b726;
-  --node: theme(colors.green.300);
+  --node: #86efac;
   --bg-node: #15803d26;
-  --preact: theme(colors.purple.300);
+  --preact: #d8b4fe;
   --bg-preact: #7e22ce26;
-  --railway: theme(colors.slate.300);
+  --railway: #cbd5e1;
   --bg-railway: #33415526;
-  --react: theme(colors.teal.300);
+  --react: #5eead4;
   --bg-react: #0f766e26;
-  --tailwind: theme(colors.cyan.300);
+  --tailwind: #67e8f9;
   --bg-tailwind: #0e749026;
-  --typescript: theme(colors.blue.300);
+  --typescript: #93c5fd;
   --bg-typescript: #1d4ed826;
-  --vercel: theme(colors.gray.300);
+  --vercel: #d1d5db;
   --bg-vercel: #37415126;
 
   scroll-behavior: smooth;
