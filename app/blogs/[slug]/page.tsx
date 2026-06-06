@@ -1,23 +1,24 @@
 import Link from "next/link";
-import { allPosts } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import { Mdx } from "@/components/mdx-components";
 import JumpToTop from "@/components/JumpToTop";
+import { getAllPosts, getPostBySlug } from "@/lib/posts";
 
 type Params = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-async function getPostFromParams(slug: string) {
-  const post = allPosts.find((post) => post.slugAsParams === slug);
-
-  if (!post) notFound();
-
-  return post;
+export function generateStaticParams() {
+  return getAllPosts().map((post) => ({
+    slug: post.slugAsParams,
+  }));
 }
 
-const Page = async ({ params }: Params) => {
-  const post = await getPostFromParams(params.slug);
+const Page = async (props: Params) => {
+  const params = await props.params;
+  const post = getPostBySlug(params.slug);
+
+  if (!post) notFound();
 
   return (
     <div className="relative">
@@ -41,9 +42,9 @@ const Page = async ({ params }: Params) => {
           </svg>{" "}
           Back to Blogs
         </Link>
-        <h1 className="mb-4 mt-0 text-2xl">{post.title}</h1>
-        <time className="mb-5 inline-block text-tertiary">{post.date}</time>
-        <Mdx code={post.body.code} />
+        <h1 className="mt-0 mb-4 text-2xl">{post.title}</h1>
+        <time className="text-tertiary mb-5 inline-block">{post.date}</time>
+        <Mdx source={post.content} />
       </main>
       <JumpToTop slug={params.slug} />
     </div>

@@ -1,6 +1,7 @@
 import * as React from "react";
-import { useMDXComponent } from "next-contentlayer/hooks";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
+import { mdxOptions } from "@/lib/mdx-options";
 import { cn } from "@/lib/utils";
 
 const components = {
@@ -12,37 +13,37 @@ const components = {
   ),
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadElement>) => (
     <h3
-      className={cn("flex items-center gap-2 text-lg ", className)}
+      className={cn("flex items-center gap-2 text-lg", className)}
       {...props}
     />
   ),
   h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadElement>) => (
     <h4
-      className={cn("flex items-center gap-2 text-base ", className)}
+      className={cn("flex items-center gap-2 text-base", className)}
       {...props}
     />
   ),
   h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadElement>) => (
     <h5
-      className={cn("flex items-center gap-2 text-base ", className)}
+      className={cn("flex items-center gap-2 text-base", className)}
       {...props}
     />
   ),
   h6: ({ className, ...props }: React.HTMLAttributes<HTMLHeadElement>) => (
     <h6
-      className={cn("flex items-center gap-2 text-base ", className)}
+      className={cn("flex items-center gap-2 text-base", className)}
       {...props}
     />
   ),
   a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
-      className={cn("text-base text-accent hover:text-[#0c885f]", className)}
+      className={cn("text-accent text-base hover:text-[#0c885f]", className)}
       {...props}
     />
   ),
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
-      className={cn("my-4 text-base leading-6 text-secondary", className)}
+      className={cn("text-secondary my-4 text-base leading-6", className)}
       {...props}
     />
   ),
@@ -59,7 +60,7 @@ const components = {
     <blockquote
       className={cn(
         "[&>*]:text-muted-foreground mt-6 border-l-2 pl-6 italic",
-        className
+        className,
       )}
       {...props}
     />
@@ -72,19 +73,21 @@ const components = {
     // eslint-disable-next-line @next/next/no-img-element
     <img className={cn("my-8 rounded-md", className)} alt={alt} {...props} />
   ),
-  hr: ({ ...props }) => <hr className="my-8 border-tertiary" {...props} />,
+  hr: ({ ...props }) => <hr className="border-tertiary my-8" {...props} />,
 };
 
 type MdxProps = {
-  code: string;
+  source: string;
 };
 
-export function Mdx({ code }: MdxProps) {
-  const Component = useMDXComponent(code);
-
+export function Mdx({ source }: MdxProps) {
   return (
     <div className="mdx">
-      <Component components={components} />
+      <MDXRemote
+        source={source}
+        components={components}
+        options={{ mdxOptions: mdxOptions as never }}
+      />
     </div>
   );
 }

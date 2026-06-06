@@ -50,8 +50,6 @@
   --bg-typescript: #1d4ed826;
   --vercel: theme(colors.gray.300);
   --bg-vercel: #37415126;
-  --contentlayer: theme(colors.purple.300);
-  --bg-contentlayer: #7e22ce26;
 
   scroll-behavior: smooth;
 }
