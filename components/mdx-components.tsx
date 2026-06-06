@@ -37,13 +37,13 @@ const components = {
   ),
   a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
-      className={cn("text-accent text-base hover:text-[#0c885f]", className)}
+      className={cn("text-base text-accent hover:text-[#0c885f]", className)}
       {...props}
     />
   ),
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
-      className={cn("text-secondary my-4 text-base leading-6", className)}
+      className={cn("my-4 text-base leading-6 text-secondary", className)}
       {...props}
     />
   ),
@@ -73,7 +73,7 @@ const components = {
     // eslint-disable-next-line @next/next/no-img-element
     <img className={cn("my-8 rounded-md", className)} alt={alt} {...props} />
   ),
-  hr: ({ ...props }) => <hr className="border-tertiary my-8" {...props} />,
+  hr: ({ ...props }) => <hr className="my-8 border-tertiary" {...props} />,
 };
 
 type MdxProps = {
@@ -86,7 +86,7 @@ export function Mdx({ source }: MdxProps) {
       <MDXRemote
         source={source}
         components={components}
-        options={{ mdxOptions: mdxOptions as never }}
+        options={{ mdxOptions }}
       />
     </div>
   );
