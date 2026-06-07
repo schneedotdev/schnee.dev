@@ -14,7 +14,6 @@ const BlogsPage = async () => {
         patterns, and lessons I pick up along the way. Each piece is a snapshot
         of how I was thinking about the problem at the time.
       </Summary>
-      <hr className="border-tertiary mt-10" />
       <section className="mt-10 flex flex-col gap-7">
         {blogs.map((blog) => (
           <Blog

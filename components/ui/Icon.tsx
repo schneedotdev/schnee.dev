@@ -2,9 +2,9 @@ import { cn } from "@/lib/utils";
 import { type Technologies } from "@/lib/projects";
 import React from "@/icons/react.svg";
 import JavaScript from "@/icons/javascript.svg";
-import CSS from "@/icons/css.svg";
+import Go from "@/icons/go.svg";
+import Rust from "@/icons/rust.svg";
 import Cloudinary from "@/icons/cloudinary.svg";
-import EJS from "@/icons/ejs.svg";
 import Node from "@/icons/node.svg";
 import Express from "@/icons/express.svg";
 import MongoDB from "@/icons/mongodb.svg";
@@ -19,6 +19,9 @@ import Vercel from "@/icons/vercel.svg";
 import Railway from "@/icons/railway.svg";
 import Astro from "@/icons/astro.svg";
 import Preact from "@/icons/preact.svg";
+import PostgreSQL from "@/icons/postgresql.svg";
+import Prisma from "@/icons/prisma.svg";
+import JWT from "@/icons/jwt.svg";
 import Github from "@/icons/github.svg";
 import ExternalLink from "@/icons/external-link.svg";
 import UpArrow from "@/icons/uparrow.svg";
@@ -67,6 +70,18 @@ export const icons: Record<
       {...props}
     />
   ),
+  go: (props) => (
+    <Go
+      className={cn(props.hover, props.stroke, props.fill, props.className)}
+      {...props}
+    />
+  ),
+  rust: (props) => (
+    <Rust
+      className={cn(props.hover, props.stroke, props.fill, props.className)}
+      {...props}
+    />
+  ),
   cloudinary: (props) => (
     <Cloudinary
       className={cn(props.hover, props.stroke, props.fill, props.className)}
@@ -102,18 +117,6 @@ export const icons: Record<
   ),
   mongoose: (props) => (
     <Mongoose
-      className={cn(props.hover, props.stroke, props.fill, props.className)}
-      {...props}
-    />
-  ),
-  css: (props) => (
-    <CSS
-      className={cn(props.hover, props.stroke, props.fill, props.className)}
-      {...props}
-    />
-  ),
-  ejs: (props) => (
-    <EJS
       className={cn(props.hover, props.stroke, props.fill, props.className)}
       {...props}
     />
@@ -163,6 +166,24 @@ export const icons: Record<
       {...props}
     />
   ),
+  postgresql: (props) => (
+    <PostgreSQL
+      className={cn(props.hover, props.stroke, props.fill, props.className)}
+      {...props}
+    />
+  ),
+  prisma: (props) => (
+    <Prisma
+      className={cn(props.hover, props.stroke, props.fill, props.className)}
+      {...props}
+    />
+  ),
+  jwt: (props) => (
+    <JWT
+      className={cn(props.hover, props.stroke, props.fill, props.className)}
+      {...props}
+    />
+  ),
   github: (props) => (
     <Github
       className={cn(props.hover, props.stroke, props.fill, props.className)}
@@ -185,15 +206,18 @@ export const icons: Record<
   twitter: (props) => <></>,
   blogs: (props) => <></>,
   projects: (props) => <></>,
-  go: (props) => <></>,
-  rust: (props) => <></>,
   cli: (props) => <></>,
+  clap: (props) => <></>,
   package: (props) => <></>,
   library: (props) => <></>,
+  utility: (props) => <></>,
+  productivity: (props) => <></>,
+  notes: (props) => <></>,
+  collections: (props) => <></>,
+  "language-design": (props) => <></>,
+  parsing: (props) => <></>,
+  "code-gen": (props) => <></>,
   interpreter: (props) => <></>,
-  jwt: (props) => <></>,
-  postgresql: (props) => <></>,
-  prisma: (props) => <></>,
 };
 
 export default Icon;
