@@ -10,7 +10,7 @@ const Header = () => {
     <>
       <div className="mt-28 w-full lg:mt-36"></div>
       <nav className="fixed z-10 w-full max-w-xl">
-        <ul className="outside-padding-cover opaque pointer-events-auto flex w-full gap-8 pb-1 pt-8 lg:pt-20">
+        <ul className="outside-padding-cover opaque pointer-events-auto flex w-full gap-8 pt-8 pb-1 lg:pt-20">
           <li
             className={`outside-padding group hover:cursor-pointer ${
               pathname === "/" && "active"
@@ -84,7 +84,30 @@ const Header = () => {
               </svg>
             </Link>
           </li>
-          <li className="z-10 h-4 w-px bg-tertiary"></li>
+          <li
+            className={`outside-padding group hover:cursor-pointer ${
+              pathname === "/reading" && "active"
+            }`}
+          >
+            <Link href="/reading" title="reading">
+              <svg
+                className="group-hover:stroke-accent"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--primary)"
+                strokeWidth="1.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M10 2v8l3-3 3 3V2" />
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
+              </svg>
+            </Link>
+          </li>
+          <li className="bg-tertiary z-10 h-4 w-px"></li>
           <li className="outside-padding group hover:cursor-pointer">
             <a
               href="https://www.github.com/schneedotdev"
