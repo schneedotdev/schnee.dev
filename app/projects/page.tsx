@@ -82,7 +82,6 @@ const ProjectSection = ({
               src={props.src}
               repo={props.repo}
               title={props.title}
-              createdAt={props.createdAt}
               technologies={props.technologies}
               description={props.description}
             />
