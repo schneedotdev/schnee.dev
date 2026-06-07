@@ -1,8 +1,22 @@
-const Summary = ({ content }: { content: React.ReactNode}) => {
+type SummaryProps =
+  | {
+      children: React.ReactNode;
+      paragraphs?: never;
+    }
+  | {
+      children?: never;
+      paragraphs: React.ReactNode[];
+    };
+
+const Summary = ({ children, paragraphs }: SummaryProps) => {
+  const content = paragraphs ?? [children];
+
   return (
-    <p className="mt-10">
-      {content}
-    </p>
+    <div className="mt-10 flex flex-col gap-3">
+      {content.map((paragraph, i) => (
+        <p key={i}>{paragraph}</p>
+      ))}
+    </div>
   );
 };
 

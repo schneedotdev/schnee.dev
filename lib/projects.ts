@@ -1,6 +1,12 @@
 export type Technologies =
   | "react"
   | "javascript"
+  | "go"
+  | "rust"
+  | "cli"
+  | "package"
+  | "library"
+  | "interpreter"
   | "cloudinary"
   | "css"
   | "node"
@@ -23,16 +29,62 @@ export type Technologies =
   | "jwt";
 
 export type ProjectProps = {
-  src: `${string}.jpg` | "backend only";
-  site: string;
+  src?: `${string}.jpg`;
+  site?: string;
   repo: `https://github.com/${string}`;
   title: string;
   description: string;
   technologies: Technologies[];
+  createdAt: string;
   year?: `'${number}`;
 };
 
-export const projects: ProjectProps[] = [
+const unsortedProjects: ProjectProps[] = [
+  {
+    repo: "https://github.com/schneedotdev/deal",
+    title: "deal",
+    technologies: ["rust", "library"],
+    description:
+      "A lightweight Rust library for managing decks of cards. Deal provides reusable primitives for creating, shuffling, and dealing cards in card-based applications and games.",
+    createdAt: "2025-02-07T23:11:21Z",
+    year: "'25",
+  },
+  {
+    repo: "https://github.com/schneedotdev/til",
+    title: "til",
+    technologies: ["rust", "cli"],
+    description:
+      "A command-line tool for capturing and revisiting short technical notes. TIL keeps useful discoveries organized and accessible directly from the terminal.",
+    createdAt: "2024-08-09T23:40:26Z",
+    year: "'24",
+  },
+  {
+    repo: "https://github.com/schneedotdev/pizza",
+    title: "pizza",
+    technologies: ["go", "package"],
+    description:
+      "A Go package that provides chainable helper methods for working with slices. Pizza explores a more composable API for common collection transformations.",
+    createdAt: "2024-07-18T00:25:45Z",
+    year: "'24",
+  },
+  {
+    repo: "https://github.com/schneedotdev/rust-driven-interpreter",
+    title: "rust driven interpreter",
+    technologies: ["rust", "interpreter"],
+    description:
+      "A programming language interpreter implemented in Rust. The project explores parsing, evaluation, environments, and the core mechanics behind executing source code.",
+    createdAt: "2024-03-02T02:32:19Z",
+    year: "'24",
+  },
+  {
+    repo: "https://github.com/schneedotdev/compose",
+    title: "compose",
+    technologies: ["rust", "cli"],
+    description:
+      "A Rust command-line tool for generating Rust code from a simpler input format. Compose focuses on reducing repetitive implementation work through code generation.",
+    createdAt: "2023-08-30T03:50:29Z",
+    year: "'23",
+  },
   {
     src: "schneedotdev.jpg",
     site: "https://schnee.dev/",
@@ -40,7 +92,8 @@ export const projects: ProjectProps[] = [
     repo: "https://github.com/schneedotdev/schnee.dev",
     technologies: ["nextjs", "typescript", "react", "mdx", "tailwind"],
     description:
-      "Schnee.dev is my meticulously crafted personal portfolio website, where performance and dynamic rendering of components take center stage. Developed using the modern Next.js App Router architecture, it harnesses the capabilities of React Server Components, file-based routing, and more, to elevate functionality, speed, and scalability. Leveraging MDX, the blog pages are dynamically generated from markdown and are provided their own dedicated routes, adding flexibility and seamless content management.",
+      "A personal website for showcasing projects, writing, and technical work. Built with the Next.js App Router, React Server Components, Tailwind, and an MDX-powered blog.",
+    createdAt: "2023-06-27T23:07:02Z",
     year: "'23",
   },
   {
@@ -50,7 +103,8 @@ export const projects: ProjectProps[] = [
     title: "attri enterprises",
     technologies: ["astro", "typescript", "preact", "css", "vercel"],
     description:
-      "Attrienterprises.com was a website I developed for a prominent company based in Brooklyn, New York. Taking charge of the entire design and development process, I later focused on improving web performance within the company. Through various code optimizations, including static-site generation (SSG), image optimization, reduction of requests and file sizes, asset bundling, partial rendering, and lazy hydration, I successfully achieved a 60% decrease in mobile page load times and a 71% decrease in desktop page load times.",
+      "A performance-focused marketing site for a Brooklyn-based business. Static generation, image optimization, reduced bundle sizes, and lazy hydration improved mobile load times by 60% and desktop load times by 71%.",
+    createdAt: "2023-03-10T22:59:15Z",
     year: "'23",
   },
   {
@@ -70,7 +124,8 @@ export const projects: ProjectProps[] = [
       "railway",
     ],
     description:
-      "Climbers Connect is a social media platform connecting rock climbers from around the world. With its main emphasis on sharing climbing experiences and adventures, this application aims to help you build meaningful connections within the thriving climbing community.",
+      "A full-stack social platform for rock climbers to share experiences and connect with others in the climbing community. The application includes profiles, authentication, image uploads, and community-oriented features.",
+    createdAt: "2022-09-11T21:19:54Z",
     year: "'23",
   },
   {
@@ -80,25 +135,10 @@ export const projects: ProjectProps[] = [
     title: "brianschnee.com",
     technologies: ["astro", "typescript", "preact", "css", "netlify"],
     description:
-      "Brianschnee.com served as the initial version of my personal portfolio, intended to attract an audience for freelance development. The application was crafted with a focus on optimal performance and captivating user interface. The website utilizes Static Generation, enabling instantaneous delivery of assets and interactivity for end users.",
+      "An earlier version of my personal portfolio focused on freelance development work. The site was built as a fast, static experience with an emphasis on presentation and performance.",
+    createdAt: "2023-03-31T06:34:30Z",
     year: "'23",
   },
-  // {
-  //   src: "backend only",
-  //   site: "backend only",
-  //   repo: "https://github.com/schneedotdev/changelog",
-  //   title: "changelog",
-  //   technologies: [
-  //     "typescript",
-  //     "node",
-  //     "express",
-  //     "postgresql",
-  //     "prisma",
-  //     "jwt",
-  //   ],
-  //   description: "",
-  //   year: "'23",
-  // },
   {
     src: "timeato.jpg",
     site: "https://timeato.up.railway.app/",
@@ -115,7 +155,8 @@ export const projects: ProjectProps[] = [
       "railway",
     ],
     description:
-      "Timeato is a productivity-centered application that harnesses the benefits of pomodoro study sessions. By organizing your study time into focused work intervals combined with regular breaks, Timeato has been proven to enhance work endurance and performance. The application empowers you to allocate dedicated time for focused tasks, enabling you to maximize your productivity during study sessions.",
+      "A Pomodoro-style productivity application for organizing work into focused sessions and scheduled breaks. Timeato helps users structure study or work sessions around consistent time blocks.",
+    createdAt: "2022-08-31T22:31:39Z",
     year: "'22",
   },
   {
@@ -133,7 +174,12 @@ export const projects: ProjectProps[] = [
       "railway",
     ],
     description:
-      "Find a dev is an application with a strong community focus, dedicated to facilitating tutoring opportunities for aspiring developers in their journey of growth. Discover experienced developers who are eager to share their knowledge and offer tutoring sessions. Utilize powerful filtering options to find developers based on specific technologies and areas of expertise. Connect with new developers, forge friendships, and make a meaningful impact in the community through mentorship and collaboration.",
+      "A mentorship platform for aspiring developers to find tutors by technology and area of expertise. Find a dev focuses on connecting learners with experienced developers who can provide targeted guidance.",
+    createdAt: "2022-08-04T01:13:25Z",
     year: "'22",
   },
 ];
+
+export const projects = [...unsortedProjects].sort((a, b) =>
+  b.createdAt.localeCompare(a.createdAt),
+);

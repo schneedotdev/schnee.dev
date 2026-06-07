@@ -84,7 +84,7 @@ const Header = () => {
               </svg>
             </Link>
           </li>
-          <li className="z-10 h-4 w-[1px] bg-tertiary"></li>
+          <li className="z-10 h-4 w-px bg-tertiary"></li>
           <li className="outside-padding group hover:cursor-pointer">
             <a
               href="https://www.github.com/schneedotdev"

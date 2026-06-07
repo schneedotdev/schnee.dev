@@ -8,12 +8,12 @@ const BlogsPage = async () => {
 
   return (
     <>
-      <Heading content="Blogs" emoji="✍️" />
-      <Summary
-        content="Along with learning, I am energized by sharing my knowledge and
-        experiences with others. I hope you take the time to explore my blog
-        articles."
-      />
+      <Heading title="Blogs" emoji="✍️" />
+      <Summary>
+        Writing helps me clarify what I&apos;m learning and share the ideas,
+        patterns, and lessons I pick up along the way. Each piece is a snapshot
+        of how I was thinking about the problem at the time.
+      </Summary>
       <hr className="border-tertiary mt-10" />
       <section className="mt-10 flex flex-col gap-7">
         {blogs.map((blog) => (

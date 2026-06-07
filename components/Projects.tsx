@@ -16,10 +16,10 @@ const Project = ({ link, title, tech, year }: ProjectProps) => {
     >
       <div className="flex items-center gap-2">
         <h3>{title}</h3>
-        <div className="mx-1 flex-1 border-t-2 border-dotted border-tertiary group-hover:border-accent"></div>
+        <div className="border-tertiary group-hover:border-accent mx-1 flex-1 border-t-2 border-dotted"></div>
         <span>{year}</span>
       </div>
-      <ul className="flex flex-wrap gap-2 text-xs text-tertiary">
+      <ul className="text-tertiary flex flex-wrap gap-2 text-xs">
         {tech.map((t, i) => {
           return (
             <li key={i}>

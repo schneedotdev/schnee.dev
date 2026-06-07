@@ -1,14 +1,15 @@
 import { serif } from "@/lib/fonts";
 
 type HeadingProps = {
-  content: React.ReactNode;
+  title: React.ReactNode;
   emoji?: string;
 };
 
-const Heading = ({ content, emoji }: HeadingProps) => {
+const Heading = ({ title, emoji }: HeadingProps) => {
   return (
-    <h1 className={`${serif.className} text-base tracking-wide text-primary`}>
-      {content} {emoji || <span className="ml-1">{emoji}</span>}
+    <h1 className={`${serif.className} text-primary text-base tracking-wide`}>
+      {title}
+      {emoji && <span className="ml-1">{emoji}</span>}
     </h1>
   );
 };
