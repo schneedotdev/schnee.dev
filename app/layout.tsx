@@ -1,11 +1,12 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import "./globals.css";
 import { scope } from "@/lib/fonts";
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: "Hire Me!",
-  description: "Brian Schnee Portfolio",
+export const metadata: Metadata = {
+  title: "schnee.dev",
+  description: "Brian Schnee's website",
 };
 
 export default function RootLayout({
@@ -17,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={scope.className}>
         <div className="flex flex-col items-center">
-          <div className="container flex max-w-2xl flex-col px-8 pb-8 text-sm text-secondary">
+          <div className="text-secondary container flex max-w-2xl flex-col px-8 pb-8 text-sm">
             <Header />
             {children}
             <Footer />

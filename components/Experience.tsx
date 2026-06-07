@@ -44,7 +44,7 @@ const Experience = ({ startDate }: ExperienceProps) => {
 
   return (
     <h3 className="text-tertiary">
-      {`Programming for ${time.years} years, ${time.months} months, ${time.days} days, ${time.hours} hours, ${time.minutes} minutes, 
+      {`Programming for ${time.years} years, ${time.months} months, ${time.days} days, ${time.hours} hours, ${time.minutes} minutes,
          ${time.seconds} seconds`}
     </h3>
   );

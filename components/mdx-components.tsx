@@ -37,13 +37,13 @@ const components = {
   ),
   a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
-      className={cn("text-base text-accent hover:text-[#0c885f]", className)}
+      className={cn("text-accent text-base hover:text-[#0c885f]", className)}
       {...props}
     />
   ),
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
-      className={cn("my-4 text-base leading-6 text-secondary", className)}
+      className={cn("text-secondary my-4 text-base leading-6", className)}
       {...props}
     />
   ),
@@ -59,7 +59,7 @@ const components = {
   }: React.HTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
       className={cn(
-        "[&>*]:text-muted-foreground mt-6 border-l-2 pl-6 italic",
+        "*:text-muted-foreground mt-6 border-l-2 pl-6 italic",
         className,
       )}
       {...props}
@@ -73,7 +73,7 @@ const components = {
     // eslint-disable-next-line @next/next/no-img-element
     <img className={cn("my-8 rounded-md", className)} alt={alt} {...props} />
   ),
-  hr: ({ ...props }) => <hr className="my-8 border-tertiary" {...props} />,
+  hr: ({ ...props }) => <hr className="border-tertiary my-8" {...props} />,
 };
 
 type MdxProps = {
