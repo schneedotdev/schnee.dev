@@ -4,11 +4,18 @@ export type Technologies =
   | "go"
   | "rust"
   | "cli"
+  | "clap"
   | "package"
   | "library"
+  | "utility"
+  | "productivity"
+  | "notes"
+  | "collections"
+  | "language-design"
+  | "parsing"
+  | "code-gen"
   | "interpreter"
   | "cloudinary"
-  | "css"
   | "node"
   | "express"
   | "mongodb"
@@ -17,7 +24,6 @@ export type Technologies =
   | "vercel"
   | "tailwind"
   | "mdx"
-  | "ejs"
   | "railway"
   | "typescript"
   | "nextjs"
@@ -30,7 +36,6 @@ export type Technologies =
 
 export type ProjectProps = {
   src?: `${string}.jpg`;
-  site?: string;
   repo: `https://github.com/${string}`;
   title: string;
   description: string;
@@ -43,7 +48,7 @@ const unsortedProjects: ProjectProps[] = [
   {
     repo: "https://github.com/schneedotdev/deal",
     title: "deal",
-    technologies: ["rust", "library"],
+    technologies: ["rust", "library", "utility"],
     description:
       "A lightweight Rust library for managing decks of cards. Deal provides reusable primitives for creating, shuffling, and dealing cards in card-based applications and games.",
     createdAt: "2025-02-07T23:11:21Z",
@@ -52,7 +57,7 @@ const unsortedProjects: ProjectProps[] = [
   {
     repo: "https://github.com/schneedotdev/til",
     title: "til",
-    technologies: ["rust", "cli"],
+    technologies: ["rust", "cli", "clap", "productivity", "notes"],
     description:
       "A command-line tool for capturing and revisiting short technical notes. TIL keeps useful discoveries organized and accessible directly from the terminal.",
     createdAt: "2024-08-09T23:40:26Z",
@@ -61,7 +66,7 @@ const unsortedProjects: ProjectProps[] = [
   {
     repo: "https://github.com/schneedotdev/pizza",
     title: "pizza",
-    technologies: ["go", "package"],
+    technologies: ["go", "package", "collections", "utility"],
     description:
       "A Go package that provides chainable helper methods for working with slices. Pizza explores a more composable API for common collection transformations.",
     createdAt: "2024-07-18T00:25:45Z",
@@ -70,7 +75,7 @@ const unsortedProjects: ProjectProps[] = [
   {
     repo: "https://github.com/schneedotdev/rust-driven-interpreter",
     title: "rust driven interpreter",
-    technologies: ["rust", "interpreter"],
+    technologies: ["rust", "interpreter", "language-design", "parsing"],
     description:
       "A programming language interpreter implemented in Rust. The project explores parsing, evaluation, environments, and the core mechanics behind executing source code.",
     createdAt: "2024-03-02T02:32:19Z",
@@ -79,7 +84,7 @@ const unsortedProjects: ProjectProps[] = [
   {
     repo: "https://github.com/schneedotdev/compose",
     title: "compose",
-    technologies: ["rust", "cli"],
+    technologies: ["rust", "cli", "clap", "code-gen"],
     description:
       "A Rust command-line tool for generating Rust code from a simpler input format. Compose focuses on reducing repetitive implementation work through code generation.",
     createdAt: "2023-08-30T03:50:29Z",
@@ -87,7 +92,6 @@ const unsortedProjects: ProjectProps[] = [
   },
   {
     src: "schneedotdev.jpg",
-    site: "https://schnee.dev/",
     title: "schnee.dev",
     repo: "https://github.com/schneedotdev/schnee.dev",
     technologies: ["nextjs", "typescript", "react", "mdx", "tailwind"],
@@ -97,11 +101,26 @@ const unsortedProjects: ProjectProps[] = [
     year: "'23",
   },
   {
+    repo: "https://github.com/schneedotdev/changelog",
+    title: "changelog",
+    technologies: [
+      "typescript",
+      "node",
+      "express",
+      "postgresql",
+      "prisma",
+      "jwt",
+    ],
+    description:
+      "A backend API for managing changelog entries and release notes. The project focuses on API design, authentication, relational data modeling, and structured persistence with PostgreSQL and Prisma.",
+    createdAt: "2022-12-30T04:14:37Z",
+    year: "'22",
+  },
+  {
     src: "attri.jpg",
-    site: "https://attrienterprises.vercel.app/",
     repo: "https://github.com/schneedotdev/attrienterprises-optimized",
     title: "attri enterprises",
-    technologies: ["astro", "typescript", "preact", "css", "vercel"],
+    technologies: ["astro", "typescript", "preact", "vercel"],
     description:
       "A performance-focused marketing site for a Brooklyn-based business. Static generation, image optimization, reduced bundle sizes, and lazy hydration improved mobile load times by 60% and desktop load times by 71%.",
     createdAt: "2023-03-10T22:59:15Z",
@@ -109,14 +128,11 @@ const unsortedProjects: ProjectProps[] = [
   },
   {
     src: "climbers.jpg",
-    site: "https://climbersconnect.up.railway.app/",
     repo: "https://github.com/schneedotdev/climbers-connect",
     title: "climbers connect",
     technologies: [
       "typescript",
       "node",
-      "ejs",
-      "css",
       "mongodb",
       "mongoose",
       "cloudinary",
@@ -130,53 +146,13 @@ const unsortedProjects: ProjectProps[] = [
   },
   {
     src: "brianschnee.jpg",
-    site: "https://brianschnee.com/",
     repo: "https://github.com/schneedotdev/portfolio-optimized",
     title: "brianschnee.com",
-    technologies: ["astro", "typescript", "preact", "css", "netlify"],
+    technologies: ["astro", "typescript", "preact", "netlify"],
     description:
       "An earlier version of my personal portfolio focused on freelance development work. The site was built as a fast, static experience with an emphasis on presentation and performance.",
     createdAt: "2023-03-31T06:34:30Z",
     year: "'23",
-  },
-  {
-    src: "timeato.jpg",
-    site: "https://timeato.up.railway.app/",
-    repo: "https://github.com/devv-work/timeato",
-    title: "timeato",
-    technologies: [
-      "javascript",
-      "node",
-      "express",
-      "mongodb",
-      "mongoose",
-      "passport",
-      "ejs",
-      "railway",
-    ],
-    description:
-      "A Pomodoro-style productivity application for organizing work into focused sessions and scheduled breaks. Timeato helps users structure study or work sessions around consistent time blocks.",
-    createdAt: "2022-08-31T22:31:39Z",
-    year: "'22",
-  },
-  {
-    src: "findadev.jpg",
-    site: "https://find-a-dev.up.railway.app/",
-    repo: "https://github.com/schneedotdev/find-a-dev",
-    title: "find a dev",
-    technologies: [
-      "javascript",
-      "node",
-      "express",
-      "mongodb",
-      "ejs",
-      "css",
-      "railway",
-    ],
-    description:
-      "A mentorship platform for aspiring developers to find tutors by technology and area of expertise. Find a dev focuses on connecting learners with experienced developers who can provide targeted guidance.",
-    createdAt: "2022-08-04T01:13:25Z",
-    year: "'22",
   },
 ];
 
