@@ -73,8 +73,8 @@ const unsortedProjects: ProjectProps[] = [
     year: "'24",
   },
   {
-    repo: "https://github.com/schneedotdev/rust-driven-interpreter",
-    title: "rust driven interpreter",
+    repo: "https://github.com/schneedotdev/monkey-lang-interpreter",
+    title: "monkey-lang interpreter",
     technologies: ["rust", "interpreter", "language-design", "parsing"],
     description:
       "A programming language interpreter implemented in Rust. The project explores parsing, evaluation, environments, and the core mechanics behind executing source code.",
